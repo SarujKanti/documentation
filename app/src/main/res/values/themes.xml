@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Documentation" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.Documentation.Splash" parent="Theme.SplashScreen">
+
+        <!-- App logo -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/app_logo</item>
+
+        <!-- Background color -->
+        <item name="windowSplashScreenBackground">@color/white</item>
+
+        <!-- Theme after splash -->
+        <item name="postSplashScreenTheme">@style/Theme.Documentation</item>
+
+    </style>
+
+
+</resources>
