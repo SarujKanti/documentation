@@ -9,7 +9,6 @@ class DocumentationRepository {
     fun getDocumentation(): List<WordDocPage> {
         return listOf(
 
-            // 🔹 Home Tab (3 images)
             WordDocPage(
                 title = "Home Tab",
                 description = "The Home tab contains basic formatting tools.",
