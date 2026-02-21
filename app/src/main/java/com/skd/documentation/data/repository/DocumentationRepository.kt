@@ -16,6 +16,7 @@ class DocumentationRepository {
                     "Change font size",
                     "Apply bold or italic",
                     "Align text"
+
                 ),
                 content = listOf(
                     WordContentItem.Text("The Home tab contains basic formatting tools."),
