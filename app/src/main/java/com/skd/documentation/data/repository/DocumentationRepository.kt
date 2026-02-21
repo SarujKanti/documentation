@@ -23,9 +23,10 @@ class DocumentationRepository {
 
                     WordContentItem.Text("Use font options to customize text appearance."),
                     WordContentItem.Image(R.drawable.insert_tab),
-                    
+
                     WordContentItem.Text("Alignment tools help organize content."),
                     WordContentItem.Image(R.drawable.home_tab),
+                    
                     WordContentItem.Text("The Home tab contains basic formatting tools."),
                     WordContentItem.Image(R.drawable.home_tab),
                     WordContentItem.Text("Use font options to customize text appearance."),
