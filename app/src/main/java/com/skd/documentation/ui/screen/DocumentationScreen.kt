@@ -4,6 +4,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
@@ -143,7 +144,10 @@ private fun AppSelectorBar(
                         color = if (isSelected) appColor else Color.Transparent,
                         shape = RoundedCornerShape(10.dp)
                     )
-                    .clickable { onSelect(index) }
+                    .clickable(
+                        interactionSource = remember { MutableInteractionSource() },
+                        indication = null
+                    ) { onSelect(index) }
                     .padding(vertical = 6.dp, horizontal = 4.dp)
             ) {
                 Icon(
