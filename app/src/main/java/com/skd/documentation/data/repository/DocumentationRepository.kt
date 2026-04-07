@@ -36,7 +36,7 @@ class DocumentationRepository {
         levelTag = "Beginner → Advanced",
         content = listOf(
             ContentItem.ChapterHeader("Home Tab", "Complete formatting guide — beginner to advanced"),
-            ContentItem.ScreenshotItem("Home Tab Ribbon", "The full Home tab showing Clipboard, Font, Paragraph, Styles, and Editing groups"),
+            ContentItem.ScreenshotItem("Home Tab Ribbon", "The Home tab contains five key groups: Clipboard (Cut/Copy/Paste/Format Painter), Font (typeface, size, Bold/Italic/Underline, highlight, text color, text effects), Paragraph (alignment, line spacing, bullets, numbering, indent, borders), Styles gallery (Normal, Heading 1-3, Title, Subtitle — one-click consistent formatting), and Editing (Find, Replace, Select All).", "Click Home tab in the ribbon"),
 
             // OVERVIEW
             ContentItem.SectionHeading("What is the Home Tab?"),
@@ -53,7 +53,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Copy or Cut", "Press Ctrl+C to copy (keep original) or Ctrl+X to cut (remove original)."),
             ContentItem.NumberedStep(3, "Position the cursor", "Click where you want to paste."),
             ContentItem.NumberedStep(4, "Paste", "Press Ctrl+V. Click the small arrow under Paste for Paste Special options (paste as plain text, keep source formatting, etc.)."),
-            ContentItem.ScreenshotItem("Clipboard Group", "Cut, Copy, Paste, and Format Painter buttons highlighted in the ribbon"),
+            ContentItem.ScreenshotItem("Clipboard Group", "Four essential tools: Paste (Ctrl+V) inserts clipboard content; right-click Paste for special options (Values Only, Formats, Transpose). Cut (Ctrl+X) moves selected content to clipboard. Copy (Ctrl+C) duplicates without removing. Format Painter — single-click copies formatting once; double-click locks it to apply repeatedly; press Esc to release.", "Home Tab → Clipboard group (top-left of ribbon)"),
             ContentItem.TipBox("Click the small arrow at the bottom-right of the Clipboard group to open the Clipboard pane — it stores your last 24 copied items."),
 
             ContentItem.SubHeading("Format Painter"),
@@ -68,7 +68,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Change font", "Click the Font Name dropdown (default: Calibri) and choose any font."),
             ContentItem.NumberedStep(3, "Change size", "Click the Font Size box and type a number, or use the A+/A− buttons."),
             ContentItem.NumberedStep(4, "Apply Bold, Italic, or Underline", "Click B, I, or U — or use the keyboard shortcuts below."),
-            ContentItem.ScreenshotItem("Font Group", "Font name, size, Bold, Italic, Underline, color, and text effects controls"),
+            ContentItem.ScreenshotItem("Font Group", "Complete character-level formatting: Font name dropdown (default Calibri) with live preview. Point size box. Bold (Ctrl+B), Italic (Ctrl+I), Underline (Ctrl+U). Strikethrough, Subscript (x2), Superscript (x2). Font Highlight Color (background color). Font Color (text color). Change Case dropdown. Clear All Formatting. The dialog launcher opens the full Font dialog with kerning, spacing, and OpenType settings.", "Home Tab → Font group → select text first, then apply formatting"),
             ContentItem.KeyShortcut("Ctrl+B", "Bold"),
             ContentItem.KeyShortcut("Ctrl+I", "Italic"),
             ContentItem.KeyShortcut("Ctrl+U", "Underline"),
@@ -95,7 +95,7 @@ class DocumentationRepository {
             ContentItem.BulletItem("Justify (Ctrl+J) — Text spreads to fill the full line width"),
             ContentItem.NumberedStep(3, "Set line spacing", "Click the Line Spacing dropdown → choose 1.0, 1.5, 2.0, or custom."),
             ContentItem.NumberedStep(4, "Set paragraph spacing", "Add space Before or After a paragraph via the line spacing menu → Line Spacing Options."),
-            ContentItem.ScreenshotItem("Paragraph Group", "Alignment buttons, line spacing, bullets, numbering, and indent controls"),
+            ContentItem.ScreenshotItem("Paragraph Group", "Block-level formatting controls: four alignment buttons (Left Ctrl+L, Center Ctrl+E, Right Ctrl+R, Justify Ctrl+J). Bullets and Numbering start lists; Multilevel List for outlines. Decrease/Increase Indent shift paragraphs. Line and Paragraph Spacing (1.0, 1.5, 2.0 options). Show/Hide paragraph marks (Ctrl+*). Borders dropdown. Shading (background color for paragraph).", "Home Tab → Paragraph group → select paragraph(s) first"),
             ContentItem.KeyShortcut("Ctrl+1", "Single line spacing"),
             ContentItem.KeyShortcut("Ctrl+2", "Double line spacing"),
             ContentItem.KeyShortcut("Ctrl+5", "1.5 line spacing"),
@@ -117,7 +117,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(1, "Apply a style", "Select text → click any style in the Styles Gallery on the Home tab."),
             ContentItem.NumberedStep(2, "Use Heading styles", "Apply Heading 1 to chapter titles, Heading 2 to sections, Heading 3 to sub-sections."),
             ContentItem.NumberedStep(3, "Navigate styles", "Click the expand arrow at the bottom-right of the Styles Gallery to see all styles."),
-            ContentItem.ScreenshotItem("Styles Gallery", "The Styles Gallery showing Normal, Heading 1, Heading 2, Title, Subtitle, and other built-in styles"),
+            ContentItem.ScreenshotItem("Styles Gallery", "Visual thumbnail swatches of named paragraph styles. Normal is default body text. Heading 1, 2, 3 create a document hierarchy used for automatic Table of Contents generation. Title and Subtitle style cover page text. No Spacing removes extra paragraph spacing. Click the More arrow (bottom-right of gallery) to expand all styles. Right-click any style to Modify, Update to Match Selection, or Remove from gallery.", "Home Tab → Styles group → click desired style thumbnail"),
             ContentItem.BulletItem("Normal — Default body text"),
             ContentItem.BulletItem("Heading 1 — Main chapter/section title (large, bold)"),
             ContentItem.BulletItem("Heading 2 — Sub-section title"),
@@ -138,7 +138,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Enter search term", "Type the word or phrase to find in the 'Find what' box."),
             ContentItem.NumberedStep(3, "Enter replacement", "Type the replacement in 'Replace with'."),
             ContentItem.NumberedStep(4, "Replace", "Click 'Replace' for one instance, or 'Replace All' to change every occurrence at once."),
-            ContentItem.ScreenshotItem("Find & Replace Dialog", "The Find and Replace dialog with Find what, Replace with fields, and options for Match case and whole word"),
+            ContentItem.ScreenshotItem("Find & Replace Dialog", "Three tabs: Find (Ctrl+F), Replace (Ctrl+H), Go To. Find what field accepts text, wildcards, or special characters. Replace with field holds replacement text. Click More >> to reveal advanced options: Match case, Find whole words only, Use wildcards (regex patterns), Find all word forms. Replace swaps the current match; Replace All changes every instance in the document simultaneously.", "Home Tab → Editing group → Replace  OR  press Ctrl+H"),
             ContentItem.TipBox("Click 'More >>' in the dialog to search with advanced options: match case, whole word only, wildcards, or even match by formatting."),
 
             // ADVANCED
@@ -177,14 +177,14 @@ class DocumentationRepository {
         levelTag = "All Levels",
         content = listOf(
             ContentItem.ChapterHeader("Insert Tab", "Add tables, images, shapes, and more"),
-            ContentItem.ScreenshotItem("Insert Tab Ribbon", "Full Insert tab with Pages, Tables, Illustrations, Media, Links, Comments, Header & Footer, Text, and Symbols groups"),
+            ContentItem.ScreenshotItem("Insert Tab Ribbon", "The Insert tab groups: Pages (Cover Page, Blank Page, Page Break Ctrl+Enter). Tables (grid picker). Illustrations (Pictures, Online Pictures, Shapes, Icons, 3D Models, SmartArt, Chart, Screenshot). Links (Hyperlink Ctrl+K, Bookmark, Cross-reference). Comments. Header & Footer with Page Numbers. Text group (Text Box, WordArt, Drop Cap, Signature Line, Object). Symbols (Equation, Symbol).", "Click Insert tab in the ribbon"),
 
             ContentItem.SectionHeading("Tables"),
             ContentItem.NumberedStep(1, "Click Insert → Table", "Open the Table grid picker."),
             ContentItem.NumberedStep(2, "Hover to select size", "Hover over the grid to highlight the number of rows × columns."),
             ContentItem.NumberedStep(3, "Click to insert", "Click the grid to insert the table at the cursor."),
             ContentItem.NumberedStep(4, "Style the table", "The Table Design and Layout tabs appear — use them to set borders, shading, and row/column sizes."),
-            ContentItem.ScreenshotItem("Insert Table Grid", "The table grid picker showing mouse hovering over a 4×3 selection"),
+            ContentItem.ScreenshotItem("Insert Table Grid", "Clicking the Table button reveals a hover grid up to 10x8 cells. Moving the mouse previews the table live in the document and shows the selected size above (e.g., 4x3 Table). Click to confirm insertion. For tables larger than 10x8, click Insert Table below the grid to open a dialog for exact row and column counts plus AutoFit behavior (Fixed Column Width, AutoFit to Contents, AutoFit to Window).", "Insert Tab → Tables group → Table button → hover over grid to select size"),
             ContentItem.TipBox("Use 'Quick Tables' for pre-built calendar and formatted table styles. Use 'Insert Table' dialog for exact row/column counts."),
 
             ContentItem.SectionHeading("Pictures"),
@@ -192,7 +192,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Resize the image", "Drag the corner handles to resize. Hold Shift to keep proportions."),
             ContentItem.NumberedStep(3, "Set text wrapping", "Click the image → Picture Format tab → Wrap Text → choose Square, Tight, or Through."),
             ContentItem.NumberedStep(4, "Crop", "Picture Format → Crop → drag the crop handles."),
-            ContentItem.ScreenshotItem("Picture Wrap Text Menu", "The Wrap Text menu showing In Line with Text, Square, Tight, Through, Top and Bottom options"),
+            ContentItem.ScreenshotItem("Picture Wrap Text Menu", "Wrap Text controls how text flows around a picture. In Line with Text: image sits on the text baseline. Square: text flows in a rectangle around the image. Tight: text follows the actual image shape boundary. Through: text fills concave areas of the shape. Top and Bottom: text stops above and below, leaving sides clear. Behind Text and In Front of Text ignore text flow. Access via Picture Format tab or the Layout Options button (appears when image is selected).", "Click image → Picture Format tab → Arrange group → Wrap Text dropdown"),
             ContentItem.BulletItem("Stock Images — Microsoft's royalty-free photo library"),
             ContentItem.BulletItem("Online Pictures — Bing image search (check licensing)"),
             ContentItem.BulletItem("Screenshots — Capture any open window or screen region"),
@@ -202,7 +202,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Draw the shape", "Click and drag on the document. Hold Shift for perfect squares or circles."),
             ContentItem.NumberedStep(3, "Add text", "Right-click the shape → Add Text."),
             ContentItem.NumberedStep(4, "SmartArt", "Insert → SmartArt → pick a category (Process, Hierarchy, Cycle, etc.) → fill in text pane."),
-            ContentItem.ScreenshotItem("SmartArt Gallery", "SmartArt gallery showing List, Process, Cycle, Hierarchy, Relationship, Matrix, and Pyramid categories"),
+            ContentItem.ScreenshotItem("SmartArt Gallery", "Seven SmartArt categories: List (non-sequential items), Process (sequential steps), Cycle (recurring flows), Hierarchy (org charts and tree structures), Relationship (Venn diagrams, Gear, Funnel — connections and overlaps), Matrix (2x2 quadrant models), Pyramid (proportional or stacked layers). A Description panel explains the best use case for each layout. After inserting, type text in the Text Pane (left side) or click directly inside shape placeholders.", "Insert Tab → Illustrations group → SmartArt button"),
 
             ContentItem.SectionHeading("Headers, Footers & Page Numbers"),
             ContentItem.NumberedStep(1, "Insert → Header or Footer", "Choose a built-in design from the gallery."),
@@ -236,14 +236,14 @@ class DocumentationRepository {
         levelTag = "Intermediate",
         content = listOf(
             ContentItem.ChapterHeader("Design Tab", "Themes, colors, fonts, and page backgrounds"),
-            ContentItem.ScreenshotItem("Design Tab Ribbon", "Design tab showing Document Formatting gallery, Colors, Fonts, Paragraph Spacing, and Page Background groups"),
+            ContentItem.ScreenshotItem("Design Tab Ribbon", "The Design tab applies document-wide visual styling. Document Formatting gallery: click any style set to restyle all headings and body text throughout the document instantly. Colors: changes all theme colors simultaneously. Fonts: changes the heading/body font pair. Paragraph Spacing presets (No Space, Compact, Tight, Open, Relaxed, Double) adjust spacing document-wide. Page Background group: Watermark, Page Color, Page Borders.", "Click Design tab in the ribbon"),
 
             ContentItem.SectionHeading("Document Themes"),
             ContentItem.BodyText("A Theme applies a coordinated set of fonts and colors to the entire document at once — headings, body text, tables, SmartArt, and charts all update instantly."),
             ContentItem.NumberedStep(1, "Click Design tab", "Navigate to the Design tab in the ribbon."),
             ContentItem.NumberedStep(2, "Hover over themes", "Live preview shows changes in your document as you hover."),
             ContentItem.NumberedStep(3, "Click to apply", "Click any theme to apply it globally."),
-            ContentItem.ScreenshotItem("Themes Gallery", "Themes gallery with Office, Facet, Integral, Ion, Metropolitan, Retrospect, Slice, and Wisp themes visible"),
+            ContentItem.ScreenshotItem("Themes Gallery", "A Theme bundles a coordinated color palette, font pair (heading font + body font), and shape effects package. Hovering over a theme thumbnail previews it live. The Office theme (default) uses Calibri Light + Calibri with blue accents. Themes sync across Word, Excel, and PowerPoint for brand consistency. Click Customize Theme to build a custom color palette and save it for reuse.", "Design Tab → Document Formatting group → Themes button"),
             ContentItem.TipBox("After applying a theme, you can still customize its individual colors and fonts without changing the overall layout."),
 
             ContentItem.SectionHeading("Colors & Fonts"),
@@ -257,7 +257,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Text watermark", "Type custom text, set font, size, color, and angle (diagonal recommended)."),
             ContentItem.NumberedStep(3, "Picture watermark", "Use your company logo as a semi-transparent background image."),
             ContentItem.NumberedStep(4, "Remove", "Design → Watermark → Remove Watermark."),
-            ContentItem.ScreenshotItem("Watermark Dialog", "Custom Watermark dialog showing Text Watermark selected with DRAFT text, diagonal layout, and semi-transparent option"),
+            ContentItem.ScreenshotItem("Watermark Dialog", "Custom Watermark (Design → Watermark → Custom Watermark) offers two types. Picture Watermark: insert any image, set scale, enable washout (fades it). Text Watermark: enter custom text (DRAFT, CONFIDENTIAL, DO NOT COPY), choose font, size, color, then select Diagonal (45 degrees) or Horizontal layout. The Semitransparent checkbox makes the watermark fade so it does not obscure body text. Watermarks appear on every page anchored in the header layer.", "Design Tab → Page Background group → Watermark → Custom Watermark"),
 
             ContentItem.SectionHeading("Page Color & Borders"),
             ContentItem.NumberedStep(1, "Design → Page Color", "Click any swatch for a solid color. Click Fill Effects for Gradient, Texture, Pattern, or Picture backgrounds."),
@@ -272,13 +272,13 @@ class DocumentationRepository {
         levelTag = "Intermediate",
         content = listOf(
             ContentItem.ChapterHeader("Layout Tab", "Page setup, margins, columns, and text flow"),
-            ContentItem.ScreenshotItem("Layout Tab Ribbon", "Layout tab showing Page Setup, Paragraph, and Arrange groups"),
+            ContentItem.ScreenshotItem("Layout Tab Ribbon", "The Layout tab controls page dimensions and positioning. Page Setup: Margins (preset and custom), Orientation (Portrait/Landscape), Size (A4, Letter, Legal, custom), Columns (one, two, three, or custom with spacing), Breaks (Page, Column, Section break types), Line Numbers, Hyphenation. Paragraph group: Left/Right indent and Before/After spacing as numeric values. Arrange group: Position, Wrap Text, Bring Forward, Send Backward, Align, Group, Rotate for selected objects.", "Click Layout tab in the ribbon"),
 
             ContentItem.SectionHeading("Page Setup"),
             ContentItem.NumberedStep(1, "Set Margins", "Layout → Margins → choose Normal (1\" all sides), Narrow (0.5\"), Wide (2\" sides), or Custom Margins for exact values."),
             ContentItem.NumberedStep(2, "Set Orientation", "Layout → Orientation → Portrait (tall) or Landscape (wide)."),
             ContentItem.NumberedStep(3, "Set Paper Size", "Layout → Size → Letter (8.5×11\"), A4 (210×297mm), Legal, or custom."),
-            ContentItem.ScreenshotItem("Page Setup Group", "Margins, Orientation, and Size buttons in the Page Setup group"),
+            ContentItem.ScreenshotItem("Page Setup Group", "Three primary controls in Page Setup. Margins gallery: Normal (1 inch all sides), Narrow (0.5 inch), Moderate (1 inch top/bottom, 0.75 inch sides), Wide (1 inch top/bottom, 2 inch sides), Mirrored (inside/outside for double-sided printing). Custom Margins at the bottom opens the full Page Setup dialog. Orientation: Portrait (tall page) or Landscape (wide page). Size: A4, Letter, Legal, plus custom width and height.", "Layout Tab → Page Setup group → Margins / Orientation / Size"),
             ContentItem.TipBox("To use Landscape orientation on just one page: Insert a Next Page Section Break before and after that page, then change orientation for just that section."),
 
             ContentItem.SectionHeading("Columns"),
@@ -292,7 +292,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Column Break", "Moves text to the top of the next column."),
             ContentItem.NumberedStep(3, "Next Page Section Break", "Starts a new section on the next page — allows different margins, orientation, or headers per section."),
             ContentItem.NumberedStep(4, "Continuous Section Break", "Starts a new section on the same page (useful for changing column layout mid-page)."),
-            ContentItem.ScreenshotItem("Breaks Menu", "Breaks dropdown showing Page Break, Column Break, Text Wrapping Break, and all Section Break types"),
+            ContentItem.ScreenshotItem("Breaks Menu", "Two categories of breaks. Page Breaks: Page Break (Ctrl+Enter) forces text to the next page; Column Break pushes text into the next column; Text Wrapping Break wraps around floating objects. Section Breaks allow different page setups within one document: Next Page starts a new section on the next page (for landscape pages within a portrait document); Continuous starts a new section on the same page (for varying column counts); Even Page and Odd Page start sections on specific page parity for book layouts.", "Layout Tab → Page Setup group → Breaks dropdown"),
 
             ContentItem.SectionHeading("Indent & Spacing"),
             ContentItem.BulletItem("Left/Right Indent — Move the paragraph edge inward from the margin"),
@@ -315,7 +315,7 @@ class DocumentationRepository {
         levelTag = "Advanced",
         content = listOf(
             ContentItem.ChapterHeader("References Tab", "TOC, footnotes, citations, bibliography, and index"),
-            ContentItem.ScreenshotItem("References Tab Ribbon", "References tab showing Table of Contents, Footnotes, Citations & Bibliography, Captions, Index, and Table of Authorities groups"),
+            ContentItem.ScreenshotItem("References Tab Ribbon", "References tab groups: Table of Contents (auto-generate TOC, Add Text, Update Table). Footnotes (Insert Footnote Alt+Ctrl+F, Insert Endnote, Show Notes). Citations and Bibliography (Insert Citation, Manage Sources, Style selector APA/MLA/Chicago/IEEE, Bibliography). Captions (Insert Caption for figures/tables/equations, Cross-reference, Table of Figures). Index (Mark Entry, Insert Index). Table of Authorities (legal documents).", "Click References tab in the ribbon"),
 
             ContentItem.SectionHeading("Table of Contents"),
             ContentItem.BodyText("A TOC is automatically built from Heading styles. Apply Heading 1, 2, and 3 styles to your section titles before inserting a TOC."),
@@ -323,7 +323,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Position cursor", "Click at the very beginning of the document (or after the cover page)."),
             ContentItem.NumberedStep(3, "Insert → Table of Contents", "References → Table of Contents → choose Automatic Table 1 or 2."),
             ContentItem.NumberedStep(4, "Update the TOC", "After editing: click on the TOC → click 'Update Table' → 'Update entire table'."),
-            ContentItem.ScreenshotItem("Table of Contents", "Auto-generated TOC showing chapter names with dotted tab leaders and page numbers"),
+            ContentItem.ScreenshotItem("Table of Contents", "An automatic TOC is generated from paragraphs styled with Heading 1, 2, and 3 styles. The TOC shows heading text on the left with a dotted tab leader (....) and the page number on the right. Heading 1 entries are flush left; Heading 2 is indented once; Heading 3 is indented twice. When edits change page numbers, right-click the TOC and choose Update Field then Update entire table to refresh all entries and page numbers.", "References Tab → Table of Contents group → Table of Contents → Automatic Table 1"),
             ContentItem.TipBox("Click 'Custom Table of Contents' to control how many levels appear, change tab leaders (dots, dashes, underline), and toggle page numbers."),
 
             ContentItem.SectionHeading("Footnotes & Endnotes"),
@@ -339,7 +339,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(3, "Fill source details", "Choose source type (Book, Journal, Website, etc.) → fill Author, Title, Year, Publisher → OK."),
             ContentItem.NumberedStep(4, "Reuse a source", "References → Insert Citation → click the previously added source."),
             ContentItem.NumberedStep(5, "Generate Bibliography", "Click at document end → References → Bibliography → choose Bibliography, References, or Works Cited."),
-            ContentItem.ScreenshotItem("Bibliography", "Auto-generated APA bibliography showing formatted references with hanging indent"),
+            ContentItem.ScreenshotItem("Bibliography", "The Bibliography list is generated from sources added through Manage Sources. Each source stores structured data (author, year, title, publisher, URL, DOI). Switching the Style dropdown automatically reformats all in-text citations and the bibliography simultaneously: APA uses author-date citations and a References list with hanging indent; MLA uses author-page and Works Cited; Chicago uses footnotes with a Bibliography. Click Update Citations and Bibliography after adding new sources.", "References Tab → Citations and Bibliography group → Bibliography dropdown"),
 
             ContentItem.SectionHeading("Captions & Index"),
             ContentItem.NumberedStep(1, "Caption", "Click image/table → References → Insert Caption → choose label (Figure, Table) and position → type description → OK."),
@@ -355,7 +355,7 @@ class DocumentationRepository {
         levelTag = "Advanced",
         content = listOf(
             ContentItem.ChapterHeader("Mailings Tab", "Mail merge — send personalized letters, emails, and labels in bulk"),
-            ContentItem.ScreenshotItem("Mailings Tab Ribbon", "Mailings tab showing Create, Start Mail Merge, Write & Insert Fields, Preview Results, and Finish groups"),
+            ContentItem.ScreenshotItem("Mailings Tab Ribbon", "The Mailings tab runs the mail merge workflow. Create: Envelopes and Labels. Start Mail Merge: choose document type (Letters, Email Messages, Envelopes, Labels, Directory) and connect a data source. Write and Insert Fields: Insert Merge Field, Address Block, Greeting Line, and field rules (If Then Else). Preview Results: browse merged records using navigation arrows. Finish and Merge: Print Documents, Send Email Messages, or Edit Individual Documents.", "Click Mailings tab in the ribbon"),
 
             ContentItem.SectionHeading("Prepare the Data Source"),
             ContentItem.BodyText("Before starting a mail merge, prepare a clean list of recipients in Excel. This is your data source."),
@@ -369,7 +369,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(1, "Open your letter template", "Open the Word document you want to personalize, or start from blank."),
             ContentItem.NumberedStep(2, "Mailings → Start Mail Merge", "Choose: Letters, Email Messages, Envelopes, Labels, or Directory."),
             ContentItem.NumberedStep(3, "Select Recipients", "Mailings → Select Recipients → Use an Existing List → browse to your Excel file → select the worksheet → OK."),
-            ContentItem.ScreenshotItem("Select Recipients", "Select Data Source dialog browsing to Recipients.xlsx, and Select Table dialog showing Sheet1 selected"),
+            ContentItem.ScreenshotItem("Select Recipients", "After choosing the document type, click Select Recipients then Use an Existing List. A file browser opens — navigate to your data file (Excel .xlsx, .csv, Access .accdb). For Excel files, a Select Table dialog lists all sheets and named ranges — choose the sheet containing recipient data. Check First row of data contains column headers if row 1 has header labels. After connecting, click Edit Recipient List to filter, sort, or de-select specific records before merging.", "Mailings Tab → Start Mail Merge group → Select Recipients → Use an Existing List"),
 
             ContentItem.SectionHeading("Insert Merge Fields"),
             ContentItem.NumberedStep(1, "Click in document", "Click where you want a personalized field (e.g., after 'Dear ')."),
@@ -378,7 +378,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(4, "Address Block", "Mailings → Address Block — inserts a full formatted address with one click."),
             ContentItem.NumberedStep(5, "Greeting Line", "Mailings → Greeting Line — inserts 'Dear Mr. Smith,' with name format options."),
             ContentItem.TipBox("Click 'Highlight Merge Fields' to see all merge fields highlighted yellow in your document."),
-            ContentItem.ScreenshotItem("Merge Fields in Document", "Letter document showing «FirstName», «LastName», «Address» merge fields highlighted"),
+            ContentItem.ScreenshotItem("Merge Fields in Document", "Merge fields appear as chevron-bracketed placeholders in the document: FirstName, LastName, City. Insert them using the Insert Merge Field dropdown (Mailings → Write and Insert Fields group). The composite AddressBlock field combines name and postal address automatically. GreetingLine inserts a formatted salutation. Click Preview Results to replace all fields with actual data from the first recipient record. Use navigation arrows to step through each record and verify layout before final merge.", "Mailings Tab → Write and Insert Fields group → Insert Merge Field"),
 
             ContentItem.SectionHeading("Preview & Finish"),
             ContentItem.NumberedStep(1, "Preview Results", "Mailings → Preview Results — toggle to see actual data instead of field codes."),
@@ -396,7 +396,7 @@ class DocumentationRepository {
         levelTag = "All Levels",
         content = listOf(
             ContentItem.ChapterHeader("Review Tab", "Proofing, comments, track changes, and document protection"),
-            ContentItem.ScreenshotItem("Review Tab Ribbon", "Review tab showing Proofing, Accessibility, Language, Comments, Tracking, Changes, Compare, and Protect groups"),
+            ContentItem.ScreenshotItem("Review Tab Ribbon", "Review tab groups: Proofing (Spelling and Grammar F7, Thesaurus Shift+F7, Word Count). Accessibility (Check Accessibility for screen reader compatibility). Language (Translate, Set Proofing Language for multilingual docs). Comments (New Comment, Delete, Previous, Next, Show Comments, Resolve/Reopen). Tracking (Track Changes Ctrl+Shift+E, Display for Review modes: Simple/All Markup/Original/No Markup, Show Markup). Changes (Accept/Reject individual or all). Compare (Compare, Combine two docs). Protect (Restrict Editing, Block Authors).", "Click Review tab in the ribbon"),
 
             ContentItem.SectionHeading("Spelling & Grammar"),
             ContentItem.NumberedStep(1, "Press F7", "Or click Review → Spelling & Grammar. Word scans the document."),
@@ -411,7 +411,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(3, "Reply", "Click the reply arrow inside an existing comment."),
             ContentItem.NumberedStep(4, "Resolve", "Click the comment → Mark as Resolved. It grays out but is preserved."),
             ContentItem.NumberedStep(5, "Delete", "Right-click comment → Delete Comment, or Review → Delete → Delete All Comments."),
-            ContentItem.ScreenshotItem("Comments in Document", "Document with a comment balloon on the right showing a reviewer's note with reply and resolve options"),
+            ContentItem.ScreenshotItem("Comments in Document", "Comment balloons are connected to selected text by a dotted leader line. Each balloon shows the reviewer profile picture or initials, display name, date, time, and comment text. Two action buttons: Reply (starts a threaded conversation visible to all reviewers) and Resolve (marks the thread as resolved, collapsing it to grey while preserving history for audit). In Simple Markup view, comments show as a small margin icon instead of a full balloon, keeping the document readable.", "Review Tab → Comments group → New Comment  OR  right-click selected text → New Comment"),
 
             ContentItem.SectionHeading("Track Changes"),
             ContentItem.BodyText("Track Changes records every edit so collaborators can see and accept or reject each change. Essential for professional document review."),
@@ -423,7 +423,7 @@ class DocumentationRepository {
             ContentItem.BulletItem("No Markup — Shows the final version without markup"),
             ContentItem.BulletItem("Original — Shows the original unedited text"),
             ContentItem.NumberedStep(4, "Accept or reject", "Review → Accept → Accept This Change, or Reject → Reject This Change. Use Accept All or Reject All to process everything at once."),
-            ContentItem.ScreenshotItem("Track Changes", "Document showing insertions underlined in blue, deletions in red strikethrough, and a change bar in the margin"),
+            ContentItem.ScreenshotItem("Track Changes", "With Track Changes enabled (Ctrl+Shift+E), every edit is recorded with author name, date, and time. Insertions appear underlined in the reviewer color (first reviewer blue, second red, third green). Deletions appear with strikethrough in the same color. Moved text shows double-underline at destination and double-strikethrough at origin. Formatting changes are noted in margin balloons. A vertical change bar in the left margin marks every line containing a tracked change.", "Review Tab → Tracking group → Track Changes button  OR  Ctrl+Shift+E"),
             ContentItem.TipBox("Review → Track Changes → Lock Tracking (set a password) to prevent reviewers from turning off tracking."),
 
             ContentItem.SectionHeading("Compare & Protect"),
@@ -439,7 +439,7 @@ class DocumentationRepository {
         levelTag = "All Levels",
         content = listOf(
             ContentItem.ChapterHeader("View Tab", "Document views, navigation, zoom, and window management"),
-            ContentItem.ScreenshotItem("View Tab Ribbon", "View tab showing Views, Immersive Reader, Page Movement, Show, Zoom, Window, and Macros groups"),
+            ContentItem.ScreenshotItem("View Tab Ribbon", "View tab groups: Views (Print Layout default, Web Layout, Outline for restructuring, Draft for fast editing, Read Mode for full-screen reading). Immersive Reader (accessibility-focused reading environment with text spacing, syllables, parts of speech highlighting). Show (Ruler, Gridlines, Navigation Pane checkboxes). Zoom (Zoom%, 100%, One Page, Multiple Pages, Page Width). Window (New Window, Arrange All, Split, View Side by Side, Synchronous Scrolling, Switch Windows). Macros (View Macros, Record Macro).", "Click View tab in the ribbon"),
 
             ContentItem.SectionHeading("View Modes"),
             ContentItem.BulletItem("Print Layout (default) — Shows the document exactly as it prints, with page edges and margins"),
@@ -457,7 +457,7 @@ class DocumentationRepository {
             ContentItem.BulletItem("Pages tab — Thumbnail grid of all pages; click to jump to any page"),
             ContentItem.BulletItem("Results tab — Search results when using the search box"),
             ContentItem.TipBox("In the Navigation Pane Headings tab, drag heading items up or down to reorder entire document sections without cut-and-paste."),
-            ContentItem.ScreenshotItem("Navigation Pane", "Navigation Pane showing the Headings tab with a 3-level document outline and the current section highlighted"),
+            ContentItem.ScreenshotItem("Navigation Pane", "The Navigation Pane has three tabs. Headings tab: clickable outline of all Heading 1, 2, 3 styled paragraphs — click any heading to jump there instantly; right-click to Promote/Demote, move the entire section up/down, or delete the section. Pages tab: thumbnail images of every page — click to jump. Results tab: search results with yellow highlights in the document and snippet previews in the pane. Type in the search box at the top to activate the Results tab.", "View Tab → Show group → Navigation Pane checkbox  OR  press Ctrl+F"),
 
             ContentItem.SectionHeading("Zoom"),
             ContentItem.NumberedStep(1, "View → Zoom", "Opens the Zoom dialog — set exact percentage, Page Width, Whole Page, Two Pages, or Many Pages."),
@@ -481,14 +481,14 @@ class DocumentationRepository {
         levelTag = "Intermediate",
         content = listOf(
             ContentItem.ChapterHeader("Draw Tab", "Digital ink, handwriting recognition, and ink-to-text conversion"),
-            ContentItem.ScreenshotItem("Draw Tab Ribbon", "Draw tab showing Drawing Tools (pen, pencil, highlighter), Insert Ink, and Convert groups"),
+            ContentItem.ScreenshotItem("Draw Tab Ribbon", "The Draw tab provides digital inking tools. Drawing Tools gallery: Pen (smooth strokes), Pencil (textured sketchy look), Highlighter (semi-transparent annotation). Each tool has customizable color and thickness. Eraser tools: Point Eraser (removes stroke segments), Stroke Eraser (removes entire strokes). Ruler: on-screen straight-edge for drawing lines. Insert Ink group: Ink to Math (converts handwritten equations), Ink to Shape (rough shapes to precise geometry), Ink to Text (handwriting to typed text). Toggle Draw with Mouse/Touch.", "Click Draw tab in the ribbon"),
 
             ContentItem.SectionHeading("Drawing Tools"),
             ContentItem.NumberedStep(1, "Enable drawing mode", "Draw → Draw with Mouse (or use a stylus on a touchscreen)."),
             ContentItem.NumberedStep(2, "Choose a tool", "Select Pen (solid lines), Pencil (textured/sketchy), or Highlighter (semi-transparent)."),
             ContentItem.NumberedStep(3, "Customize the pen", "Double-click any pen icon to set its Color, Thickness (0.25–6mm), and special effects (Rainbow, Galaxy, Gold, etc.)."),
             ContentItem.NumberedStep(4, "Erase", "Draw → Eraser → Stroke Eraser (removes a whole stroke) or Segment Eraser (removes only the part you touch)."),
-            ContentItem.ScreenshotItem("Draw Toolbar", "Pen, Pencil, and Highlighter tools shown with a pen customization popup for color and thickness"),
+            ContentItem.ScreenshotItem("Draw Toolbar", "Click the dropdown arrow on any pen, pencil, or highlighter to open the customization flyout. The top section shows a 40-color palette. The Thickness slider ranges from 0.25 mm to 6 mm for pens and pencils, and 2 mm to 16 mm for highlighters. Pens also offer an Effects dropdown (Rainbow, Galaxy, Lava, Ocean, Rose Gold, Gold). The tool thumbnail in the ribbon updates with your chosen color and thickness dot. Add up to 16 custom tools using + Add Pen. Settings sync via Microsoft account.", "Draw Tab → Drawing Tools gallery → click dropdown arrow on any pen tool"),
 
             ContentItem.SectionHeading("Lasso Select"),
             ContentItem.NumberedStep(1, "Draw → Lasso Select", "Your cursor becomes a lasso."),
@@ -514,7 +514,7 @@ class DocumentationRepository {
         levelTag = "All Levels",
         content = listOf(
             ContentItem.ChapterHeader("Help Tab", "Support, training, and master keyboard shortcut reference"),
-            ContentItem.ScreenshotItem("Help Tab Ribbon", "Help tab showing Help, Show Training, What's New, Contact Support, and Feedback buttons"),
+            ContentItem.ScreenshotItem("Help Tab Ribbon", "Help Tab (F1): opens the Help task pane — type any question to get Microsoft Docs articles and step-by-step guides. Show Training: free Microsoft online training courses organized by skill level (Beginner, Intermediate, Advanced). Whats New: panel highlighting recently added Word features. Contact Support: chat or phone callback (requires Microsoft 365 subscription). Feedback: Submit a Frown to report a problem with screenshot, Submit a Smile for positive feedback, Suggest a Feature. Account info shows your Microsoft account, subscription type, and Office build number.", "Click Help tab in the ribbon  OR  press F1"),
 
             ContentItem.SectionHeading("Getting Help"),
             ContentItem.NumberedStep(1, "Press F1", "Opens the Help task pane. Type any question or keyword to search Microsoft's documentation."),
@@ -574,7 +574,7 @@ class DocumentationRepository {
         levelTag = "Beginner",
         content = listOf(
             ContentItem.ChapterHeader("Microsoft Excel", "The world's most powerful spreadsheet application"),
-            ContentItem.ScreenshotItem("Excel Interface", "Excel window showing the ribbon, Name Box (A1), Formula Bar, column letters (A, B, C...), row numbers (1, 2, 3...), sheet tabs, and status bar"),
+            ContentItem.ScreenshotItem("Excel Interface", "Key Excel interface zones: Ribbon (Home, Insert, Page Layout, Formulas, Data, Review, View tabs). Name Box left of formula bar shows active cell address (e.g., B3) — type a cell address here to navigate directly. Formula Bar shows raw cell content — formulas display as =SUM(A1:A10) even when the cell shows the calculated result. Column headers: A through XFD (16,384 columns). Row headers: 1 through 1,048,576. Sheet tabs at the bottom — right-click to rename, color, move, or copy. Status bar at the bottom shows Sum, Average, Count of selected cells plus zoom slider.", "Open Microsoft Excel → observe the interface layout zones"),
 
             ContentItem.SectionHeading("Understanding the Excel Interface"),
             ContentItem.BulletItem("Cell — The basic unit. Each cell has an address like A1, B3, or Z100."),
@@ -600,7 +600,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(1, "Type a starting value", "Type Monday, January, or 1 in a cell."),
             ContentItem.NumberedStep(2, "Hover the fill handle", "Hover the bottom-right corner of the cell — cursor changes to a black +."),
             ContentItem.NumberedStep(3, "Drag to fill", "Drag down or across. Excel auto-fills the series: Tuesday, Wednesday... or February, March..."),
-            ContentItem.ScreenshotItem("AutoFill in Action", "A cell with 'Monday' selected, with the fill handle being dragged down filling in Tuesday through Sunday"),
+            ContentItem.ScreenshotItem("AutoFill in Action", "AutoFill recognizes patterns and series. The Fill Handle is the small square at the bottom-right corner of a selected cell — hover over it to change the cursor from a white selection plus to a thin black fill crosshair. Recognized series: days of the week (Mon/Monday), months (Jan/January), quarters (Q1 Q2), and custom lists. For numbers, select two cells to set the step pattern (2 then 4 fills 6, 8, 10). Right-click and drag to choose Fill Days, Fill Weekdays, Fill Months, Fill Years, or Linear/Growth trend.", "Type a series starter in a cell → hover the bottom-right corner → drag the Fill Handle"),
             ContentItem.TipBox("Type 1 and 2 in two cells, select both, then drag the fill handle — Excel continues the numeric pattern (3, 4, 5...)."),
 
             ContentItem.SectionHeading("Saving and File Formats"),
@@ -619,7 +619,7 @@ class DocumentationRepository {
         levelTag = "Beginner → Intermediate",
         content = listOf(
             ContentItem.ChapterHeader("Excel Formatting", "Number formats, cell styles, and conditional formatting"),
-            ContentItem.ScreenshotItem("Excel Home Tab", "Excel Home tab showing Clipboard, Font, Alignment, Number, Styles, Cells, and Editing groups"),
+            ContentItem.ScreenshotItem("Excel Home Tab", "Excel Home tab groups: Clipboard (Cut/Copy/Paste with Paste Special options: Values Only, Formulas, Transpose, Paste Link). Font (face, size, Bold, Italic, Underline, Borders dropdown with 13 types, Fill Color, Font Color). Alignment (horizontal/vertical align, Wrap Text, Merge and Center, Orientation, Indent). Number (format selector: General to Text, decimal buttons, comma separator). Styles (Conditional Formatting, Format as Table, Cell Styles). Cells (Insert/Delete/Format for rows, columns, and sheets). Editing (AutoSum, Fill series, Clear, Sort and Filter, Find and Select).", "Click Home tab in Excel ribbon"),
 
             ContentItem.SectionHeading("Number Formatting"),
             ContentItem.BodyText("Number formatting controls how values display in cells without changing the underlying data."),
@@ -636,7 +636,7 @@ class DocumentationRepository {
             ContentItem.BulletItem("Fraction — Displays as a fraction (e.g., 0.5 → 1/2)"),
             ContentItem.BulletItem("Scientific — Exponential notation (e.g., 1.23E+06)"),
             ContentItem.BulletItem("Text — Treats the cell as text (numbers won't calculate)"),
-            ContentItem.ScreenshotItem("Number Format Dropdown", "Number format dropdown showing General, Number, Currency, Accounting, Short Date, Long Date, Time, Percentage, Fraction, Scientific, Text, and More Number Formats"),
+            ContentItem.ScreenshotItem("Number Format Dropdown", "The Number Format dropdown (Home → Number group) controls how cell values display without changing the stored value. General: as entered. Number: decimal places and thousands separator (1,234.56). Currency: currency symbol flush against the number. Accounting: aligns currency symbols in a column. Short Date: 12/31/2024. Long Date: Tuesday December 31 2024. Percentage: multiplies by 100 and adds % (0.05 displays as 5%). Scientific: 1.23E+06. Text: treats numbers as text, preventing calculations. More Number Formats opens the full Format Cells dialog with custom format codes.", "Home Tab → Number group → click the Number Format dropdown"),
             ContentItem.KeyShortcut("Ctrl+1", "Open Format Cells dialog"),
             ContentItem.KeyShortcut("Ctrl+Shift+$", "Apply Currency format"),
             ContentItem.KeyShortcut("Ctrl+Shift+%", "Apply Percentage format"),
@@ -658,7 +658,7 @@ class DocumentationRepository {
             ContentItem.BulletItem("Color Scales — Gradient color across the range (e.g., red → yellow → green)"),
             ContentItem.BulletItem("Icon Sets — Traffic lights, arrows, or stars based on value ranges"),
             ContentItem.NumberedStep(3, "Manage rules", "Home → Conditional Formatting → Manage Rules — edit, delete, or reorder existing rules."),
-            ContentItem.ScreenshotItem("Conditional Formatting", "A sales data table with Data Bars applied — shorter bars for lower values, taller bars for higher values, and red color scale for negative values"),
+            ContentItem.ScreenshotItem("Conditional Formatting", "Conditional Formatting (Home → Styles group) applies visual rules automatically based on cell values. Highlight Cell Rules: Greater Than, Less Than, Between, Equal To, Text Contains, Duplicate Values. Top/Bottom Rules: Top 10 Items, Bottom 10 Items, Above Average, Below Average. Data Bars: fills each cell with a bar proportional to the cell value — ideal for instant visual comparison of a column. Color Scales: two- or three-color gradient (e.g., red-yellow-green). Icon Sets: arrows, traffic lights, stars, flags based on thresholds. Manage Rules shows all rules and lets you set evaluation priority order.", "Home Tab → Styles group → Conditional Formatting → choose rule type"),
         )
     )
 
@@ -668,7 +668,7 @@ class DocumentationRepository {
         levelTag = "Beginner → Advanced",
         content = listOf(
             ContentItem.ChapterHeader("Excel Formulas", "From basic arithmetic to advanced lookup functions"),
-            ContentItem.ScreenshotItem("Formula Bar", "Formula bar showing =VLOOKUP(A2,Sheet2!A:C,2,FALSE) with the Formulas tab visible"),
+            ContentItem.ScreenshotItem("Formula Bar", "The formula bar displays raw cell contents. For a cell showing 1,234.56 the bar shows 1234.56 without formatting. For a formula cell, it shows the formula text such as =VLOOKUP(A2,Sheet2!A:C,2,FALSE). Click in the bar to edit directly. The X button cancels the edit (same as pressing Escape). The checkmark confirms the entry (same as pressing Enter). The fx button opens the Function Arguments dialog — a guided form showing each argument description and current computed value, making complex functions much easier to enter correctly.", "Click any cell → look at the formula bar above the grid  OR  click the fx button"),
 
             ContentItem.SectionHeading("Formula Basics"),
             ContentItem.BodyText("Every formula starts with = (equals sign). Excel calculates the result and displays it in the cell."),
@@ -700,7 +700,7 @@ class DocumentationRepository {
             ContentItem.SubHeading("VLOOKUP — Vertical lookup"),
             ContentItem.BodyText("VLOOKUP searches the first column of a range for a value, then returns a value from a specified column in the same row."),
             ContentItem.FormulaItem("=VLOOKUP(A2, B:D, 2, FALSE)", "Looks up value in A2 in column B, returns the value from column C (2nd column of B:D). FALSE = exact match."),
-            ContentItem.ScreenshotItem("VLOOKUP Example", "Spreadsheet showing VLOOKUP looking up an Employee ID in column A, searching table B:D, and returning the employee's department name"),
+            ContentItem.ScreenshotItem("VLOOKUP Example", "VLOOKUP syntax: =VLOOKUP(lookup_value, table_array, col_index_num, range_lookup). lookup_value: the value to find (e.g., Employee ID in cell A2). table_array: the range to search — VLOOKUP always searches the leftmost column (e.g., Sheet2!A:D). col_index_num: which column number in the table to return (3 returns the 3rd column). range_lookup: FALSE for exact match (required for most lookups); TRUE for approximate match (requires sorted data, used for tiered grades or pricing). Common errors: N/A means value not found; REF! means col_index_num exceeds the table width.", "Type =VLOOKUP( in any cell  OR  Formulas tab → Lookup and Reference → VLOOKUP"),
             ContentItem.TipBox("Always use FALSE for exact match in VLOOKUP. TRUE does approximate matching and requires the lookup column to be sorted ascending."),
             ContentItem.SubHeading("XLOOKUP — Modern replacement for VLOOKUP"),
             ContentItem.FormulaItem("=XLOOKUP(A2, B:B, C:C, \"Not found\")", "Looks up A2 in column B, returns matching value from column C. Shows 'Not found' if no match. More flexible than VLOOKUP."),
@@ -731,13 +731,13 @@ class DocumentationRepository {
         levelTag = "Intermediate → Advanced",
         content = listOf(
             ContentItem.ChapterHeader("Data Tab", "Sort, filter, validation, text-to-columns, and data tools"),
-            ContentItem.ScreenshotItem("Excel Data Tab", "Data tab showing Get & Transform Data, Queries & Connections, Sort & Filter, Data Tools, Forecast, and Outline groups"),
+            ContentItem.ScreenshotItem("Excel Data Tab", "Excel Data tab groups: Get and Transform Data (From Text/CSV, From Web, From Table/Range for Power Query data cleaning, From Workbook). Queries and Connections (manage existing Power Query connections). Sort and Filter (Sort multi-level dialog, Filter/AutoFilter toggle, Advanced Filter with criteria range). Data Tools (Text to Columns, Flash Fill Ctrl+E, Remove Duplicates, Data Validation, What-If Analysis: Goal Seek/Scenario Manager/Data Table, Relationships). Forecast (time-series Forecast Sheet). Outline (Group, Ungroup, Subtotal for collapsible row and column groups).", "Click Data tab in Excel ribbon"),
 
             ContentItem.SectionHeading("Sort Data"),
             ContentItem.NumberedStep(1, "Click inside your data range", "Click any cell in the column you want to sort."),
             ContentItem.NumberedStep(2, "Data → Sort A to Z or Z to A", "For a quick single-column sort."),
             ContentItem.NumberedStep(3, "Multi-column sort", "Data → Sort → click 'Add Level' to sort by multiple columns (e.g., sort by Department, then by Last Name within each department)."),
-            ContentItem.ScreenshotItem("Sort Dialog", "Sort dialog showing Sort by 'Department' (A to Z), Then by 'LastName' (A to Z) levels"),
+            ContentItem.ScreenshotItem("Sort Dialog", "The Sort dialog (Data → Sort or Home → Sort and Filter → Custom Sort) allows multi-level sorting. Each level has three settings: Column (chosen from your header row), Sort On (Values, Cell Color, Font Color, or Conditional Formatting Icon), and Order (A to Z, Z to A, or Custom List for months/days). Add Level adds secondary sort criteria to break ties in the previous level. Delete Level removes a criterion. Drag levels up/down to change priority. My data has headers checkbox includes or excludes the header row from sorting.", "Data Tab → Sort and Filter group → Sort button"),
 
             ContentItem.SectionHeading("Filter Data"),
             ContentItem.NumberedStep(1, "Click inside your table", "Click any cell in the data range."),
@@ -752,7 +752,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(3, "Set validation rule", "Allow: Whole number, Decimal, List, Date, Time, Text length, or Custom formula."),
             ContentItem.NumberedStep(4, "Dropdown list", "Choose 'List' → enter comma-separated values (e.g., Yes,No,Maybe) or select a range with your list."),
             ContentItem.NumberedStep(5, "Error alert", "Go to the Error Alert tab → type a message shown when invalid data is entered."),
-            ContentItem.ScreenshotItem("Data Validation Dropdown", "A cell with a dropdown arrow showing a list: Yes, No, Pending, Approved, Rejected"),
+            ContentItem.ScreenshotItem("Data Validation Dropdown", "Data Validation (Data → Data Tools → Data Validation) restricts what users can enter in a cell. Settings tab Allow choices: Whole Number, Decimal, List (enter values comma-separated OR reference a range like =$F$1:$F$5 to create a dropdown menu), Date, Time, Text Length, Custom (a formula like =ISNUMBER(A1)). Input Message tab shows a helpful tooltip when the cell is selected. Error Alert tab: Stop (blocks invalid entry), Warning (allows with a warning dialog), Information (allows with an info notice). Circle Invalid Data marks existing cells that violate their rules with red circles.", "Data Tab → Data Tools group → Data Validation → Settings tab → Allow: List"),
 
             ContentItem.SectionHeading("Text to Columns"),
             ContentItem.NumberedStep(1, "Select the column", "Select the cells containing text to split."),
@@ -775,7 +775,7 @@ class DocumentationRepository {
         levelTag = "Beginner → Intermediate",
         content = listOf(
             ContentItem.ChapterHeader("Excel Charts", "Visualize data with professional charts and graphs"),
-            ContentItem.ScreenshotItem("Chart Types Gallery", "Insert Chart dialog showing Bar, Column, Line, Pie, Area, XY Scatter, Map, Stock, Surface, Radar, Treemap, Sunburst, Histogram, Box & Whisker, Waterfall, Funnel, and Combo chart types"),
+            ContentItem.ScreenshotItem("Chart Types Gallery", "Chart categories: Column and Bar (compare values across categories — Column is vertical, Bar is horizontal). Line (trends over time). Pie and Doughnut (parts of a whole — use only when values sum to 100%). Area (like line but filled, emphasizing cumulative volume). XY Scatter (correlation between two numeric variables with no category axis). Bubble (scatter plot where bubble size represents a third variable). Map (geographical data by country or region). Stock (OHLC financial data). Radar (multi-category spider/web comparisons). Treemap, Sunburst, Histogram, Box and Whisker, Waterfall, Funnel (modern Excel chart types added in Excel 2016). Combo (two chart types combined, often columns plus a line on a secondary axis).", "Insert Tab → Charts group → click a chart type  OR  click the dialog launcher for all types"),
 
             ContentItem.SectionHeading("Create a Chart"),
             ContentItem.NumberedStep(1, "Select your data", "Highlight the cells containing the data AND headers you want to chart."),
@@ -799,7 +799,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(3, "Chart Design → Change Colors", "Apply a different color palette from the options."),
             ContentItem.NumberedStep(4, "Add Chart Elements", "Click the + button next to the chart → add/remove Axis Titles, Data Labels, Legend, Gridlines, Trendline, and more."),
             ContentItem.NumberedStep(5, "Move the chart", "Chart Design → Move Chart → 'New sheet' (dedicated chart sheet) or 'Object in' (stays on the data sheet)."),
-            ContentItem.ScreenshotItem("Chart with Labels", "A column chart with the chart title 'Quarterly Sales', data labels showing values on each bar, and a legend at the bottom"),
+            ContentItem.ScreenshotItem("Chart with Labels", "After inserting a chart, Chart Design and Format tabs appear. Chart Design tab: Change Chart Type, Switch Row/Column (transposes data series), Select Data (add/remove/edit series and axis labels), Quick Layout (preset label/axis combinations), Change Colors, Chart Styles gallery. Double-click the Chart Title to edit it. Data Labels: Chart Design → Add Chart Element → Data Labels → choose position (Center, Inside End, Outside End, Data Callout). Right-click any chart element and choose Format to open the Format pane with Fill, Border, Effects, Size and Properties options.", "Select chart → Chart Design tab → Add Chart Element → Data Labels / Chart Title / Legend"),
         )
     )
 
@@ -809,7 +809,7 @@ class DocumentationRepository {
         levelTag = "Advanced",
         content = listOf(
             ContentItem.ChapterHeader("Pivot Tables", "Summarize thousands of rows of data in seconds"),
-            ContentItem.ScreenshotItem("Pivot Table Overview", "A raw sales data table on the left and a finished Pivot Table summary on the right showing total sales by region and product"),
+            ContentItem.ScreenshotItem("Pivot Table Overview", "A PivotTable transforms flat data (rows of records with column headers) into a dynamic cross-tabular summary. Source data requirements: one row per record, column headers in row 1, no blank rows or merged cells. The PivotTable aggregates numeric fields (SUM, COUNT, AVERAGE, MAX, MIN). Multiple PivotTables can connect to the same source. Right-click and choose Refresh (or Data → Refresh All) to update after source changes. PivotTables are non-destructive — they never modify the source data.", "Insert Tab → Tables group → PivotTable → select source range and destination"),
 
             ContentItem.SectionHeading("What is a Pivot Table?"),
             ContentItem.BodyText("A Pivot Table is an interactive summary table that lets you group, count, sum, and analyze large datasets without formulas. It's the most powerful analysis tool in Excel."),
@@ -820,7 +820,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Click inside your data", "Any cell in the data range."),
             ContentItem.NumberedStep(3, "Insert → PivotTable", "Excel selects the data range automatically. Choose New Worksheet → OK."),
             ContentItem.NumberedStep(4, "The PivotTable pane opens", "The PivotTable Field List appears on the right side."),
-            ContentItem.ScreenshotItem("PivotTable Field List", "PivotTable Field List pane showing available fields at the top and the four drop zones: Filters, Columns, Rows, and Values"),
+            ContentItem.ScreenshotItem("PivotTable Field List", "The Field List pane has two sections. Top: all available fields from the source table as checkboxes. Bottom: four drop zones. Filters area: fields here appear as a dropdown filter above the PivotTable. Columns area: fields here become column headers (Quarter → Q1, Q2, Q3, Q4). Rows area: fields here become row labels (e.g., ProductCategory). Values area: numeric fields here are aggregated — right-click and choose Value Field Settings to select Sum, Count, Average, Max, Min, StdDev. Drag fields between zones to instantly reorganize. Checking a text field checkbox defaults to Rows; checking a numeric field defaults to Values.", "Click anywhere inside the PivotTable → PivotTable Field List pane appears on the right"),
 
             ContentItem.SectionHeading("Build the Pivot Table"),
             ContentItem.NumberedStep(1, "Add rows", "Drag a field to the Rows box (e.g., 'Region' → gives you one row per region)."),
@@ -834,7 +834,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(2, "Sort & Filter", "Click the dropdown arrow in any Row or Column label to sort, filter, or expand/collapse groups."),
             ContentItem.NumberedStep(3, "Refresh the data", "If your source data changes: right-click anywhere on the Pivot Table → Refresh."),
             ContentItem.NumberedStep(4, "Add a Slicer", "PivotTable Analyze → Insert Slicer → choose a field. Slicers add visual filter buttons you can click to filter the table instantly."),
-            ContentItem.ScreenshotItem("Pivot Table with Slicer", "Pivot Table showing Sales by Region and Quarter with a Slicer panel for Product Category with North, South, East, West buttons"),
+            ContentItem.ScreenshotItem("Pivot Table with Slicer", "A Slicer is a visual filter panel. Insert via PivotTable Analyze → Filter group → Insert Slicer → check the field to slice by. The Slicer panel shows clickable filter buttons. Click a button to filter the PivotTable; Ctrl+click to select multiple values; click the Clear Filter icon (funnel with X, top-right) to remove all filters. Slicers can connect to multiple PivotTables — right-click the slicer → Report Connections → check all PivotTables that should respond. Use the Slicer tab in the ribbon to change the Slicer Style, set the number of button Columns, and resize the panel.", "Click PivotTable → PivotTable Analyze tab → Filter group → Insert Slicer"),
         )
     )
 
@@ -859,7 +859,7 @@ class DocumentationRepository {
         levelTag = "Beginner",
         content = listOf(
             ContentItem.ChapterHeader("Microsoft PowerPoint", "Create professional presentations from scratch"),
-            ContentItem.ScreenshotItem("PowerPoint Interface", "PowerPoint window showing the ribbon, Slides panel on the left, main editing area, and Notes panel at the bottom"),
+            ContentItem.ScreenshotItem("PowerPoint Interface", "PowerPoint has five main zones: Ribbon (Home, Insert, Design, Transitions, Animations, Slide Show, Review, View tabs). Slides panel (left): thumbnail strip — click to navigate, drag to reorder, right-click for slide operations. Editing canvas (center): click placeholder boxes to type content, drag objects to position them, resize by dragging handles. Notes panel (bottom): speaker notes per slide, visible in Presenter View and printed Notes Pages. Status bar (bottom): current slide/total slides, theme name, zoom slider, view buttons (Normal, Slide Sorter, Reading View, Slide Show).", "Open Microsoft PowerPoint → observe the five interface zones"),
 
             ContentItem.SectionHeading("Understanding the Interface"),
             ContentItem.BulletItem("Slides Panel — Left sidebar showing thumbnail previews of all slides"),
@@ -895,14 +895,14 @@ class DocumentationRepository {
         levelTag = "Beginner → Intermediate",
         content = listOf(
             ContentItem.ChapterHeader("Design & Themes", "Create a visually consistent professional presentation"),
-            ContentItem.ScreenshotItem("Design Tab", "PowerPoint Design tab showing Themes gallery, Variants panel, Customize section, and Designer task pane"),
+            ContentItem.ScreenshotItem("Design Tab", "PowerPoint Design tab: Themes gallery shows thumbnail previews of built-in themes — each bundles a background, color palette, font pair, and shape effects. Hover for live preview. Variants panel shows 4 color variations of the selected theme. Customize group: Slide Size (Widescreen 16:9, Standard 4:3, or Custom dimensions) and Format Background (solid, gradient, picture, pattern, or texture fills). The Designer button opens the AI-powered PowerPoint Designer pane which suggests professional slide layouts based on your content.", "Click Design tab in PowerPoint ribbon"),
 
             ContentItem.SectionHeading("Apply a Theme"),
             ContentItem.NumberedStep(1, "Click Design tab", "The Themes gallery shows all built-in PowerPoint themes."),
             ContentItem.NumberedStep(2, "Hover to preview", "Hovering applies a live preview to all slides simultaneously."),
             ContentItem.NumberedStep(3, "Click to apply", "Applies the theme to every slide in the presentation."),
             ContentItem.NumberedStep(4, "Choose a Variant", "Each theme has 4 color variants shown in the Variants panel — click one to change the color palette while keeping the layout."),
-            ContentItem.ScreenshotItem("Theme Variants", "A theme shown in 4 color variants: blue, red, green, and dark/black"),
+            ContentItem.ScreenshotItem("Theme Variants", "Variants are four preset color-and-effect combinations for the active theme. Hover over each for a live preview on the current slide. The More arrow on the Variants panel reveals sub-menus: Colors (change only the palette), Fonts (change only the heading/body font pair), Effects (change only shadow/reflection/glow/bevel on shapes), Background Styles (12 preset background fills). This allows mixing theme components — e.g., applying the Organic theme with the Red Violet color palette and Franklin Gothic font pair.", "Design Tab → Variants group → hover over variant thumbnails"),
 
             ContentItem.SectionHeading("Slide Size"),
             ContentItem.NumberedStep(1, "Design → Slide Size", "Choose Standard (4:3) or Widescreen (16:9 — modern default) or Custom Size."),
@@ -916,7 +916,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(4, "Add a logo", "Insert a logo image on the Slide Master — it will appear on every slide automatically."),
             ContentItem.NumberedStep(5, "Close Slide Master", "Slide Master → Close Master View."),
             ContentItem.TipBox("Use the Slide Master to add your company logo and brand colors once — it propagates to the entire presentation instantly."),
-            ContentItem.ScreenshotItem("Slide Master View", "Slide Master view showing the main master slide at top and layout slides below, with a logo placeholder in the bottom-left corner"),
+            ContentItem.ScreenshotItem("Slide Master View", "Slide Master view (View → Master Views → Slide Master) shows the template hierarchy. The large top thumbnail is the Slide Master (parent) — objects placed here appear on every layout. Below are Layout slides (Title Slide, Title and Content, Two Content, Blank, etc.). Changes to the Master cascade to all layouts unless a layout overrides them. To add a logo to every slide, insert it on the Slide Master. Use Insert Placeholder to add new placeholder types (Content, Text, Picture, Chart) to a layout. Click Close Master View when done to return to Normal view.", "View Tab → Master Views group → Slide Master button"),
         )
     )
 
@@ -926,7 +926,7 @@ class DocumentationRepository {
         levelTag = "All Levels",
         content = listOf(
             ContentItem.ChapterHeader("Text & Objects", "Text boxes, images, shapes, SmartArt, charts, and tables"),
-            ContentItem.ScreenshotItem("Insert Tab in PowerPoint", "PowerPoint Insert tab showing Tables, Images, Illustrations, Add-ins, Links, Comments, Text, and Media groups"),
+            ContentItem.ScreenshotItem("Insert Tab in PowerPoint", "PowerPoint Insert tab: Tables (grid picker). Images (This Device, Stock Images, Online Pictures, Screenshot of open windows). Illustrations (Shapes gallery, Icons, 3D Models, SmartArt, Chart). Links (Hyperlink Ctrl+K, Action for on-click or mouse-over button behaviors). Comments. Text group (Text Box, Header and Footer, WordArt, Date and Time, Slide Number, Object). Media group (Video from This Device/Online/Stock, Audio from This Device/Record Audio, Screen Recording). Add-ins (Office Store third-party extensions).", "Click Insert tab in PowerPoint ribbon"),
 
             ContentItem.SectionHeading("Text Boxes & Formatting"),
             ContentItem.NumberedStep(1, "Click a text placeholder", "Click 'Click to add text' directly on the slide."),
@@ -959,7 +959,7 @@ class DocumentationRepository {
         levelTag = "Intermediate → Advanced",
         content = listOf(
             ContentItem.ChapterHeader("Transitions & Animations", "Add motion to slides and objects professionally"),
-            ContentItem.ScreenshotItem("Transitions Tab", "Transitions tab showing the Transition gallery with Fade, Push, Wipe, Split, Reveal, Cut, and more — with Effect Options and Timing controls"),
+            ContentItem.ScreenshotItem("Transitions Tab", "Transitions control how PowerPoint moves between slides. Transition gallery groups: Subtle (Cut, Fade, Push, Wipe, Split, Reveal, Shape, Flash), Exciting (Drape, Curtains, Wind, Page Curl, Cube, Doors, Box, Zoom, and more), Dynamic Content (Pan, Ferris Wheel, Orbit, Fly Through). Effect Options: changes direction or flavor of the transition (e.g., Wipe → From Left/Right/Up/Down). Timing group: Sound (add audio), Duration (speed in seconds), Apply To All (copies settings to every slide), Advance Slide (On Mouse Click or After N seconds for automatic slide shows.", "Click Transitions tab → click a transition thumbnail to apply it"),
 
             ContentItem.SectionHeading("Slide Transitions"),
             ContentItem.BodyText("Transitions are animations between one slide and the next. Apply them to individual slides or all slides at once."),
@@ -980,7 +980,7 @@ class DocumentationRepository {
             ContentItem.BulletItem("Motion Path — Object moves along a custom drawn path"),
             ContentItem.NumberedStep(3, "Open Animation Pane", "Animations → Animation Pane — see all animations in order, drag to reorder."),
             ContentItem.NumberedStep(4, "Set trigger", "Each animation can start: On Click, With Previous (simultaneously), or After Previous (automatically in sequence)."),
-            ContentItem.ScreenshotItem("Animation Pane", "Animation Pane showing a sequence of animations: Title (Fade), Bullet 1 (Fly In On Click), Bullet 2 (Fly In After Previous)"),
+            ContentItem.ScreenshotItem("Animation Pane", "The Animation Pane (Animations → Advanced Animation → Animation Pane) lists all animations on the current slide in time order. Each entry shows a trigger icon (mouse cursor = On Click, clock icon = After/With Previous), the object name, the effect name, and a duration bar on a timeline. Click an entry to select it and its object on the slide. The dropdown arrow beside each entry offers Effect Options (direction, sound, text animation), Timing (start trigger, delay in seconds, duration, repeat count), and Remove. Drag entries up/down to reorder the animation sequence.", "Animations Tab → Advanced Animation group → Animation Pane button"),
             ContentItem.TipBox("For bullet points, click 'Effect Options' → 'By Paragraph' to make each bullet appear one at a time on click — this keeps the audience focused on each point."),
         )
     )
@@ -991,7 +991,7 @@ class DocumentationRepository {
         levelTag = "All Levels",
         content = listOf(
             ContentItem.ChapterHeader("Slide Show & Sharing", "Present confidently and share your work"),
-            ContentItem.ScreenshotItem("Slide Show Tab", "Slide Show tab showing Start Slide Show, Set Up, and Monitors groups with Presenter View toggle"),
+            ContentItem.ScreenshotItem("Slide Show Tab", "Slide Show tab groups: Start Slide Show (From Beginning F5, From Current Slide Shift+F5, Present Online via browser link, Custom Slide Show for a named slide subset). Set Up group (Set Up Slide Show for Full Screen/Window/Kiosk mode and looping, Hide Slide excludes a slide without deleting it, Rehearse Timings records per-slide pacing, Record Slide Show records audio/video narration per-slide). Monitors group (Monitor selector for dual-display setups, Use Presenter View toggle for the presenter dashboard on a second screen).", "Click Slide Show tab  OR  press F5 to start the presentation from the beginning"),
 
             ContentItem.SectionHeading("Present Your Slides"),
             ContentItem.NumberedStep(1, "Start from beginning", "Press F5 or Slide Show → From Beginning."),
@@ -1010,7 +1010,7 @@ class DocumentationRepository {
             ContentItem.NumberedStep(1, "Enable Presenter View", "Slide Show → check 'Use Presenter View'."),
             ContentItem.NumberedStep(2, "Connect a projector", "Connect HDMI/DisplayPort → Windows detects second screen → PowerPoint automatically uses Presenter View."),
             ContentItem.NumberedStep(3, "Use the tools", "Draw on slides with the pen tool, zoom into any area, and read your notes while the audience sees only the slides."),
-            ContentItem.ScreenshotItem("Presenter View", "Presenter View showing: current slide (large), next slide preview (top right), speaker notes (bottom), and timer running"),
+            ContentItem.ScreenshotItem("Presenter View", "Presenter View gives the presenter a private dashboard on a second monitor or projector. Zones: Current slide (large center — what the audience sees). Next slide preview (top-right thumbnail to prepare for transitions). Speaker notes (bottom half with scroll bar and A+/A- font size controls for readability). Timer (top-left with Pause and Restart buttons for pacing management). Navigation: large back/forward arrows and a slide grid icon for non-linear navigation. Annotation tools: pen, highlighter, and eraser for on-screen markup during the presentation. Black screen button temporarily blanks the audience display.", "Press F5 to start → Slide Show tab → Use Presenter View (requires a second display)"),
 
             ContentItem.SectionHeading("Rehearse & Record"),
             ContentItem.NumberedStep(1, "Rehearse timings", "Slide Show → Rehearse Timings — records how long you spend on each slide."),
@@ -1041,7 +1041,7 @@ class DocumentationRepository {
         levelTag = "All Levels",
         content = listOf(
             ContentItem.ChapterHeader("Outlook Email", "Send, receive, and organize emails professionally"),
-            ContentItem.ScreenshotItem("Outlook Interface", "Outlook window showing the folder list (left), email list (center), and reading pane (right) with the Home tab ribbon at top"),
+            ContentItem.ScreenshotItem("Outlook Interface", "Outlook three-panel layout: Left Navigation Pane shows Inbox, Drafts, Sent Items, Deleted Items, Junk Email, Archive, and custom folders; below are Calendar, People, Tasks, Notes switchers. Center Message List shows emails with sender name, subject line, preview snippet, date, and icons (attachment paperclip, flag, read/unread indicator dot). Right Reading Pane shows the full email body — click any email in the message list to preview it. Double-click an email to open it in its own window. Right-click an email for quick actions: Reply, Reply All, Forward, Delete, Move, Categorize, Flag, Mark as Read/Unread.", "Open Microsoft Outlook → observe the three-panel navigation layout"),
 
             ContentItem.SectionHeading("Compose & Send Email"),
             ContentItem.NumberedStep(1, "New Email", "Press Ctrl+N or Home → New Email."),
@@ -1071,7 +1071,7 @@ class DocumentationRepository {
         levelTag = "All Levels",
         content = listOf(
             ContentItem.ChapterHeader("Outlook Calendar", "Schedule meetings, set reminders, and manage your time"),
-            ContentItem.ScreenshotItem("Outlook Calendar", "Outlook Calendar in Week view showing meetings, appointments, and a mini monthly calendar in the left panel"),
+            ContentItem.ScreenshotItem("Outlook Calendar", "Outlook Calendar (press Ctrl+2 or click the Calendar icon in the Navigation Pane) shows time blocks as colored appointment rectangles. View options: Day (single day hour-by-hour grid), Work Week (Monday-Friday), Week (all 7 days), Month (calendar grid), Schedule View (horizontal Gantt-style timeline). The mini monthly calendar in the left panel lets you jump to any date by clicking — bold dates have appointments. New appointment: double-click any time slot or press Ctrl+N. Meeting requests include the Scheduling Assistant which shows all invitees availability as Busy, Tentative, or Free blocks so you can find a time that works for everyone.", "Click Calendar icon in Outlook Navigation Pane  OR  press Ctrl+2"),
 
             ContentItem.SectionHeading("Create Appointments & Meetings"),
             ContentItem.NumberedStep(1, "Switch to Calendar", "Click the Calendar icon in the navigation bar (bottom left)."),
@@ -1110,7 +1110,7 @@ class DocumentationRepository {
         levelTag = "Beginner",
         content = listOf(
             ContentItem.ChapterHeader("Microsoft OneNote", "Your digital notebook for notes, ideas, and research"),
-            ContentItem.ScreenshotItem("OneNote Interface", "OneNote window showing the notebook list (left panel), section tabs (top), page list (right panel), and the free-form note canvas in the center"),
+            ContentItem.ScreenshotItem("OneNote Interface", "OneNote three-level hierarchy: Notebooks (top level shown in a dropdown or left panel — each notebook is a file or OneDrive location). Sections (color-coded tabs across the top of the notebook — right-click a tab to Rename, Move, Color, or Password Protect). Pages (listed in the right panel — right-click to Rename, Move, Copy, or Delete). The note canvas is free-form — click anywhere on the canvas to start a new text container; drag containers by their top bar to reposition; resize by dragging the right edge. Unlike Word there is no page flow — content containers can be placed freely and even overlap. Notes sync automatically to OneDrive when using Microsoft 365.", "Open Microsoft OneNote → observe the notebook/section/page hierarchy"),
 
             ContentItem.SectionHeading("OneNote Structure"),
             ContentItem.BodyText("OneNote organizes content in three levels: Notebooks → Sections → Pages."),
@@ -1144,7 +1144,7 @@ class DocumentationRepository {
         levelTag = "Intermediate",
         content = listOf(
             ContentItem.ChapterHeader("OneNote Organization", "Tags, search, and collaboration"),
-            ContentItem.ScreenshotItem("OneNote Tags", "OneNote page showing tagged content: To Do checkboxes (checked and unchecked), Important star tags, and Question mark tags"),
+            ContentItem.ScreenshotItem("OneNote Tags", "OneNote Tags (Home → Tags gallery) annotate individual paragraphs for later searching and review. To Do (Ctrl+1): inserts a checkbox — check it when the action is complete, ideal for meeting action items. Important (Ctrl+2): yellow star marks critical information. Question (Ctrl+3): purple question mark for follow-up items. Remember for later (Ctrl+4). Definition (Ctrl+5). Highlight (Ctrl+6). The Find Tags feature (Home → Tags → Find Tags) generates a Tag Summary task pane that collects all tagged items across all notebooks, organized by tag type, section, title, or date for easy review.", "Home Tab → Tags group → click a tag type  OR  use Ctrl+1 through Ctrl+6 shortcuts"),
 
             ContentItem.SectionHeading("Tags"),
             ContentItem.BodyText("Tags are visual markers that help you categorize and find important content quickly."),
