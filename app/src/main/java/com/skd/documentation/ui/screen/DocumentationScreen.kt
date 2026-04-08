@@ -18,6 +18,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -119,53 +120,82 @@ private fun AppSelectorBar(
     selectedIndex: Int,
     onSelect: (Int) -> Unit
 ) {
-    Row(
+    Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f))
-            .padding(horizontal = 8.dp, vertical = 8.dp),
-        horizontalArrangement = Arrangement.spacedBy(6.dp),
-        verticalAlignment = Alignment.CenterVertically
+            .background(Color.White)
     ) {
-        apps.forEachIndexed { index, app ->
-            val isSelected = index == selectedIndex
-            val appColor = Color(app.primaryColor)
+        // App name header
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    start = 16.dp,
+                    end = 16.dp,
+                    top = 10.dp,
+                    bottom = 2.dp
+                ),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "Microsoft Office",
+                style = MaterialTheme.typography.labelMedium,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF1A1A2E),
+                letterSpacing = 0.3.sp
+            )
+            Spacer(Modifier.weight(1f))
+            Text(
+                text = "Learning Guide",
+                style = MaterialTheme.typography.labelSmall,
+                color = Color(0xFF6B7280)
+            )
+        }
 
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .weight(1f)
-                    .clip(RoundedCornerShape(10.dp))
-                    .background(
-                        if (isSelected) appColor.copy(alpha = 0.15f)
-                        else Color.Transparent
+        // App chips row
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 10.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(6.dp)
+        ) {
+            apps.forEachIndexed { index, app ->
+                val isSelected = index == selectedIndex
+                val appColor = Color(app.primaryColor)
+                val shortName = app.appName.removePrefix("MS ")
+
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .weight(1f)
+                        .clip(RoundedCornerShape(10.dp))
+                        .background(
+                            if (isSelected) appColor else Color(0xFFF3F4F6)
+                        )
+                        .clickable(
+                            interactionSource = remember { MutableInteractionSource() },
+                            indication = null
+                        ) { onSelect(index) }
+                        .padding(vertical = 8.dp, horizontal = 4.dp)
+                ) {
+                    Icon(
+                        painter = painterResource(app.appIcon),
+                        contentDescription = app.appName,
+                        tint = if (isSelected) Color.White else appColor,
+                        modifier = Modifier.size(24.dp)
                     )
-                    .border(
-                        width = if (isSelected) 1.5.dp else 0.dp,
-                        color = if (isSelected) appColor else Color.Transparent,
-                        shape = RoundedCornerShape(10.dp)
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        text = shortName,
+                        fontSize = 9.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = if (isSelected) Color.White else Color(0xFF374151),
+                        textAlign = TextAlign.Center
                     )
-                    .clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = null
-                    ) { onSelect(index) }
-                    .padding(vertical = 6.dp, horizontal = 4.dp)
-            ) {
-                Icon(
-                    painter = painterResource(app.appIcon),
-                    contentDescription = app.appName,
-                    tint = if (isSelected) appColor else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
-                    modifier = Modifier.size(22.dp)
-                )
-                Spacer(Modifier.height(3.dp))
-                Text(
-                    text = app.appName.removePrefix("MS "),
-                    style = MaterialTheme.typography.labelSmall,
-                    fontSize = 10.sp,
-                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                    color = if (isSelected) appColor else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
-                )
+                }
             }
         }
+
+        HorizontalDivider(color = Color(0xFFE5E7EB))
     }
 }
