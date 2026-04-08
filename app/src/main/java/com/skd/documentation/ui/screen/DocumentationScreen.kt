@@ -10,6 +10,7 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -128,7 +129,12 @@ private fun AppSelectorBar(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp, top = 10.dp, bottom = 2.dp),
+                .padding(
+                    start = 16.dp,
+                    end = 16.dp,
+                    top = 10.dp,
+                    bottom = 2.dp
+                ),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
