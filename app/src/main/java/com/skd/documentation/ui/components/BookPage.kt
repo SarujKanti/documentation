@@ -14,7 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.key.Key.Companion.F
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -43,42 +42,6 @@ fun BookPageRenderer(
             .background(Color(0xFFF6F7F9))
             .verticalScroll(rememberScrollState())
     ) {
-        // ── Breadcrumb header ──
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(appColor)
-                .padding(horizontal = 16.dp, vertical = 10.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Icon(
-                painter = painterResource(section.tabIcon),
-                contentDescription = null,
-                tint = Color.White,
-                modifier = Modifier.size(18.dp)
-            )
-            Spacer(Modifier.width(8.dp))
-            Text(
-                text = section.tabName,
-                style = MaterialTheme.typography.titleSmall,
-                color = Color.White,
-                fontWeight = FontWeight.Bold
-            )
-            Spacer(Modifier.weight(1f))
-            Surface(
-                shape = RoundedCornerShape(20.dp),
-                color = Color.White.copy(alpha = 0.22f)
-            ) {
-                Text(
-                    text = section.levelTag,
-                    style = MaterialTheme.typography.labelSmall,
-                    color = Color.White,
-                    fontWeight = FontWeight.Medium,
-                    modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
-                )
-            }
-        }
-
         // ── Content items ──
         section.content.forEach { item ->
             ContentItemView(item = item, appColor = appColor)
@@ -577,6 +540,12 @@ private fun getSpecificContent(title: String): Pair<String, List<String>> = when
         "Home" to listOf("New Page", "New Section", "│ Styles▾", "Tags▾", "│ Search  Ctrl+F", "│ Sync▾")
     title.contains("OneNote Tags", ignoreCase = true) ->
         "Tags" to listOf("☑ To Do  Ctrl+1", "★ Important  Ctrl+2", "? Question  Ctrl+3", "↓ Remember  Ctrl+4", "Def  Ctrl+5", "🖊 Highlight  Ctrl+6", "── Find Tags…")
+    title.contains("Home Tab", ignoreCase = true) && title.contains("Ribbon", ignoreCase = true) ->
+        "Home — 5 Groups" to listOf("✂ Clipboard", "Aa Font", "≡ Paragraph", "¶ Styles", "🔍 Editing")
+    title.contains("Home Tab", ignoreCase = true) ->
+        "Home Ribbon" to listOf("✂ Clipboard", "Aa Font", "≡ Paragraph", "¶ Styles", "🔍 Editing")
+    title.contains("Ribbon", ignoreCase = true) ->
+        "Ribbon Tabs" to listOf("File", "Home ●", "Insert", "Design", "Layout", "References", "Mailings", "Review", "View")
     else ->
         "Commands" to listOf("File", "Home ●", "Insert", "Design", "Layout", "References", "Review", "View")
 }
