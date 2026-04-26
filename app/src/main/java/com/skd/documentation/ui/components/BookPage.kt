@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -702,42 +703,39 @@ private fun ScreenshotFrame(item: ContentItem.ScreenshotItem, appColor: Color) {
                         letterSpacing = 0.5.sp
                     )
                     Spacer(Modifier.height(5.dp))
-                    // Button chips — wrap in rows of 4
-                    val rows = buttons.chunked(4)
-                    rows.forEach { rowBtns ->
-                        Row(
-                            horizontalArrangement = Arrangement.spacedBy(4.dp),
-                            modifier = Modifier.padding(bottom = 3.dp)
-                        ) {
-                            rowBtns.forEach { btn ->
-                                val isSeparator = btn.startsWith("──") || btn.startsWith("│") || btn.startsWith("──")
-                                val isActive = btn.contains("●") || btn.contains("●") || btn.contains("☑")
-                                if (isSeparator) {
-                                    Text(
-                                        text = btn.removePrefix("│ ").removePrefix("── "),
-                                        fontSize = 7.sp,
-                                        color = Color(0xFF999999),
-                                        fontStyle = FontStyle.Italic,
-                                        modifier = Modifier.padding(horizontal = 2.dp, vertical = 2.dp)
+                    // Button chips — single horizontally scrollable row (no wrapping)
+                    Row(
+                        modifier = Modifier.horizontalScroll(rememberScrollState()),
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        buttons.forEach { btn ->
+                            val isSeparator = btn.startsWith("──") || btn.startsWith("│")
+                            val isActive    = btn.contains("●") || btn.contains("☑")
+                            if (isSeparator) {
+                                Text(
+                                    text     = btn.removePrefix("│ ").removePrefix("── "),
+                                    fontSize = 7.sp,
+                                    color    = Color(0xFF999999),
+                                    fontStyle = FontStyle.Italic,
+                                    modifier = Modifier.padding(horizontal = 2.dp, vertical = 2.dp)
+                                )
+                            } else {
+                                Surface(
+                                    shape  = RoundedCornerShape(3.dp),
+                                    color  = if (isActive) appColor.copy(alpha = 0.15f) else Color(0xFFF0F0F0),
+                                    border = BorderStroke(
+                                        0.5.dp,
+                                        if (isActive) appColor.copy(alpha = 0.6f) else borderClr
                                     )
-                                } else {
-                                    Surface(
-                                        shape = RoundedCornerShape(3.dp),
-                                        color = if (isActive) appColor.copy(alpha = 0.15f) else Color(0xFFF0F0F0),
-                                        border = BorderStroke(
-                                            0.5.dp,
-                                            if (isActive) appColor.copy(alpha = 0.6f) else borderClr
-                                        )
-                                    ) {
-                                        Text(
-                                            text = btn,
-                                            fontSize = 7.5.sp,
-                                            fontWeight = if (isActive) FontWeight.Bold else FontWeight.Normal,
-                                            color = if (isActive) appColor else textDark,
-                                            modifier = Modifier.padding(horizontal = 5.dp, vertical = 3.dp),
-                                            maxLines = 1
-                                        )
-                                    }
+                                ) {
+                                    Text(
+                                        text       = btn,
+                                        fontSize   = 7.5.sp,
+                                        fontWeight = if (isActive) FontWeight.Bold else FontWeight.Normal,
+                                        color      = if (isActive) appColor else textDark,
+                                        modifier   = Modifier.padding(horizontal = 5.dp, vertical = 3.dp),
+                                        maxLines   = 1
+                                    )
                                 }
                             }
                         }
@@ -783,34 +781,33 @@ private fun ScreenshotFrame(item: ContentItem.ScreenshotItem, appColor: Color) {
                 }
             }
 
-            // ── 4. Document / content area ────────────────────────────────────
+            // ── 4. Document / content area (compact) ──────────────────────────
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(Color(0xFFE0E0E0))
-                    .padding(8.dp)
+                    .padding(horizontal = 8.dp, vertical = 6.dp)
             ) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .background(Color.White)
-                        .padding(horizontal = 12.dp, vertical = 8.dp)
+                        .padding(horizontal = 12.dp, vertical = 7.dp)
                 ) {
                     Column {
-                        // Heading line
                         Box(
                             modifier = Modifier
-                                .fillMaxWidth(0.45f)
-                                .height(5.dp)
+                                .fillMaxWidth(0.40f)
+                                .height(4.dp)
                                 .background(Color(0xFFBBBBBB), RoundedCornerShape(3.dp))
                         )
-                        Spacer(Modifier.height(5.dp))
-                        listOf(0.88f, 0.75f, 0.92f, 0.68f, 0.80f).forEach { frac ->
+                        Spacer(Modifier.height(4.dp))
+                        listOf(0.85f, 0.72f, 0.90f).forEach { frac ->
                             Spacer(Modifier.height(3.dp))
                             Box(
                                 modifier = Modifier
                                     .fillMaxWidth(frac)
-                                    .height(3.5.dp)
+                                    .height(3.dp)
                                     .background(Color(0xFFDDDDDD), RoundedCornerShape(2.dp))
                             )
                         }
@@ -856,36 +853,39 @@ private fun ScreenshotFrame(item: ContentItem.ScreenshotItem, appColor: Color) {
                 }
             }
 
-            // ── 6. Figure caption ──────────────────────────────────────────────
+            // ── 6. Figure caption (compact — 3-line max) ──────────────────────
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(Color.White)
-                    .padding(horizontal = 14.dp, vertical = 11.dp)
+                    .padding(horizontal = 14.dp, vertical = 10.dp)
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Box(
                         modifier = Modifier
-                            .size(7.dp)
+                            .size(6.dp)
                             .clip(CircleShape)
                             .background(appColor)
                     )
                     Spacer(Modifier.width(7.dp))
                     Text(
-                        text = "Fig: ${item.stepTitle}",
-                        fontSize = 11.sp,
+                        text       = item.stepTitle,
+                        fontSize   = 11.sp,
                         fontWeight = FontWeight.Bold,
-                        color = Color(0xFF1A1A1A)
+                        color      = Color(0xFF1A1A1A)
                     )
                 }
-                Spacer(Modifier.height(5.dp))
-                Text(
-                    text = item.caption,
-                    fontSize = 11.sp,
-                    color = Color(0xFF555555),
-                    lineHeight = 17.sp,
-                    fontStyle = FontStyle.Italic
-                )
+                if (item.caption.isNotEmpty()) {
+                    Spacer(Modifier.height(4.dp))
+                    Text(
+                        text       = item.caption,
+                        fontSize   = 10.5.sp,
+                        color      = Color(0xFF6B7280),
+                        lineHeight = 15.sp,
+                        maxLines   = 3,
+                        overflow   = androidx.compose.ui.text.style.TextOverflow.Ellipsis
+                    )
+                }
             }
         }
     }
