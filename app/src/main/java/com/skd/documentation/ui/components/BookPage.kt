@@ -498,6 +498,20 @@ private fun getSpecificContent(title: String): Pair<String, List<String>> = when
         "Number" to listOf("General", "Number: 1,234.00", "Currency: $1,234", "Accounting", "Short Date", "Long Date", "Percentage: 95%", "Scientific: 1.23E+3", "Text")
     title.contains("Conditional Formatting", ignoreCase = true) ->
         "Styles" to listOf("Highlight Rules▾", "Top/Bottom Rules▾", "Data Bars▾", "Color Scales▾", "Icon Sets▾", "── Manage Rules…")
+    title.contains("Formulas Tab Overview", ignoreCase = true) ->
+        "Formulas Ribbon" to listOf("Σ AutoSum▾", "📋 Recently Used▾", "$ Financial▾", "✓ Logical▾", "📅 Date & Time▾", "🔍 Lookup▾", "∑ Math & Trig▾", "More Functions▾")
+    title.contains("AutoSum", ignoreCase = true) ->
+        "Function Library" to listOf("Σ AutoSum ●", "Sum", "Average", "Count Numbers", "Max", "Min", "── More Functions…")
+    title.contains("VLOOKUP Example", ignoreCase = true) ->
+        "Lookup & Reference" to listOf("VLOOKUP ●", "HLOOKUP", "XLOOKUP", "INDEX", "MATCH", "OFFSET", "INDIRECT", "CHOOSE")
+    title.contains("HLOOKUP", ignoreCase = true) ->
+        "Lookup & Reference" to listOf("HLOOKUP ●", "VLOOKUP", "XLOOKUP", "INDEX", "MATCH", "ROW", "COLUMN", "CHOOSE")
+    title.contains("INDEX MATCH", ignoreCase = true) || title.contains("INDEX+MATCH", ignoreCase = true) ->
+        "Lookup & Reference" to listOf("INDEX ●", "MATCH ●", "XLOOKUP", "OFFSET", "INDIRECT", "ROW", "COLUMN", "ROWS")
+    title.contains("Dynamic Array", ignoreCase = true) ->
+        "Function Library" to listOf("FILTER ●", "SORT▾", "SORTBY", "UNIQUE", "SEQUENCE", "XMATCH", "XLOOKUP", "RANDARRAY")
+    title.contains("Date Function", ignoreCase = true) ->
+        "Date & Time" to listOf("TODAY ●", "NOW", "DATE▾", "DATEDIF", "DAYS", "EDATE", "EOMONTH", "NETWORKDAYS", "WORKDAY")
     title.contains("Formula Bar", ignoreCase = true) || title.contains("VLOOKUP", ignoreCase = true) ->
         "Function Library" to listOf("Σ AutoSum▾", "Recently Used▾", "Financial▾", "Logical▾", "Lookup & Reference▾", "Math▾", "More Functions▾")
     title.contains("Excel Data Tab", ignoreCase = true) ->
