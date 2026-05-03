@@ -3,19 +3,21 @@ package com.skd.documentation.ui.components
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.key.Key.Companion.F
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -38,18 +40,28 @@ fun BookPageRenderer(
     appColor: Color,
     modifier: Modifier = Modifier
 ) {
-    Column(
-        modifier = modifier
+    // LazyColumn only composes items that are actually on screen.
+    // Replaces Column+verticalScroll which composed ALL 80+ items upfront,
+    // causing jank during pager swipes on every Android version.
+    val listState = rememberLazyListState()
+
+    LazyColumn(
+        state          = listState,
+        modifier       = modifier
             .fillMaxSize()
-            .background(Color(0xFFF6F7F9))
-            .verticalScroll(rememberScrollState())
+            .background(Color(0xFFF6F7F9)),
+        contentPadding = PaddingValues(bottom = 40.dp)
     ) {
-        // ── Content items ──
-        section.content.forEach { item ->
+        itemsIndexed(
+            items       = section.content,
+            // Stable keys let Compose skip recomposition for unchanged items
+            key         = { index, _ -> index },
+            // Content types let Compose reuse node slots across different item
+            // types, reducing allocation during fast scrolling
+            contentType = { _, item -> item::class.simpleName }
+        ) { _, item ->
             ContentItemView(item = item, appColor = appColor)
         }
-
-        Spacer(Modifier.height(40.dp))
     }
 }
 
@@ -570,48 +582,55 @@ private fun getSpecificContent(title: String): Pair<String, List<String>> = when
 private fun ScreenshotFrame(item: ContentItem.ScreenshotItem, appColor: Color) {
     val title = item.stepTitle
 
-    // Detect the Office app
-    val combined = "$title ${item.navigationPath} ${item.caption}"
-    val (appName, docName) = when {
-        combined.contains("Excel", ignoreCase = true)
-            || combined.contains("Pivot", ignoreCase = true)
-            || combined.contains("Spreadsheet", ignoreCase = true)
-            || combined.contains("VLOOKUP", ignoreCase = true)
-            || combined.contains("Formula", ignoreCase = true) ->
-            "Microsoft Excel" to "Workbook1.xlsx"
-        combined.contains("PowerPoint", ignoreCase = true)
-            || combined.contains("Slide", ignoreCase = true)
-            || combined.contains("Presentation", ignoreCase = true) ->
-            "Microsoft PowerPoint" to "Presentation1.pptx"
-        combined.contains("Outlook", ignoreCase = true)
-            || combined.contains("Calendar", ignoreCase = true)
-            || combined.contains("Inbox", ignoreCase = true) ->
-            "Microsoft Outlook" to "Inbox"
-        combined.contains("OneNote", ignoreCase = true)
-            || combined.contains("Notebook", ignoreCase = true) ->
-            "Microsoft OneNote" to "My Notebook"
-        else ->
-            "Microsoft Word" to "Document1.docx"
+    // ── All expensive string operations wrapped in remember ──────────────────
+    // Without remember, these run on EVERY recomposition (including during
+    // pager swipes and scroll). remember caches them until the item changes.
+
+    val combined = remember(item.stepTitle, item.navigationPath, item.caption) {
+        "$title ${item.navigationPath} ${item.caption}"
     }
 
-    // Active tab detection
-    val allTabs = listOf("File", "Home", "Insert", "Design", "Layout",
-        "References", "Mailings", "Review", "View", "Draw", "Help",
-        "Transitions", "Animations", "Slide Show")
-    val activeTab = allTabs.firstOrNull { tab ->
-        item.navigationPath.startsWith(tab, ignoreCase = true) ||
-        item.navigationPath.contains(" $tab ", ignoreCase = true) ||
-        title.contains("$tab Tab", ignoreCase = true)
-    } ?: "Home"
+    val (appName, docName) = remember(combined) {
+        when {
+            combined.contains("Excel", ignoreCase = true)
+                || combined.contains("Pivot", ignoreCase = true)
+                || combined.contains("Spreadsheet", ignoreCase = true)
+                || combined.contains("VLOOKUP", ignoreCase = true)
+                || combined.contains("Formula", ignoreCase = true) ->
+                "Microsoft Excel" to "Workbook1.xlsx"
+            combined.contains("PowerPoint", ignoreCase = true)
+                || combined.contains("Slide", ignoreCase = true)
+                || combined.contains("Presentation", ignoreCase = true) ->
+                "Microsoft PowerPoint" to "Presentation1.pptx"
+            combined.contains("Outlook", ignoreCase = true)
+                || combined.contains("Calendar", ignoreCase = true)
+                || combined.contains("Inbox", ignoreCase = true) ->
+                "Microsoft Outlook" to "Inbox"
+            combined.contains("OneNote", ignoreCase = true)
+                || combined.contains("Notebook", ignoreCase = true) ->
+                "Microsoft OneNote" to "My Notebook"
+            else ->
+                "Microsoft Word" to "Document1.docx"
+        }
+    }
 
-    // Context-specific buttons
-    val (groupName, buttons) = getSpecificContent(title)
+    val activeTab = remember(item.navigationPath, title) {
+        val allTabs = listOf("File", "Home", "Insert", "Design", "Layout",
+            "References", "Mailings", "Review", "View", "Draw", "Help",
+            "Transitions", "Animations", "Slide Show")
+        allTabs.firstOrNull { tab ->
+            item.navigationPath.startsWith(tab, ignoreCase = true) ||
+            item.navigationPath.contains(" $tab ", ignoreCase = true) ||
+            title.contains("$tab Tab", ignoreCase = true)
+        } ?: "Home"
+    }
 
-    // Is this a dialog-type screenshot?
-    val isDialog = title.contains("Dialog", ignoreCase = true)
-        || title.contains("Field List", ignoreCase = true)
+    val (groupName, buttons) = remember(title) { getSpecificContent(title) }
+
+    val isDialog = remember(title) {
         || title.contains("Pane", ignoreCase = true)
         || title.contains("AutoFill", ignoreCase = true)
+    }
 
     val windowBg = Color(0xFFEFEFEF)
     val ribbonBg = Color.White

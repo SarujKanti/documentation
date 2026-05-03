@@ -10,21 +10,24 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
-import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.skd.documentation.data.model.OfficeApp
 import com.skd.documentation.ui.components.BookPageRenderer
 import com.skd.documentation.viewmodel.DocumentationViewModel
 import kotlinx.coroutines.launch
+import kotlin.math.absoluteValue
+import kotlin.math.sign
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -55,20 +58,36 @@ fun DocumentationScreen(
             val pagerState = rememberPagerState { selectedApp.sections.size }
             val appColor   = Color(selectedApp.primaryColor)
 
+            // derivedStateOf: tab labels only recompose when the page number
+            // changes, NOT on every frame during a swipe gesture.
+            val currentPage by remember { derivedStateOf { pagerState.currentPage } }
+
             // Scrollable tab row
             ScrollableTabRow(
-                selectedTabIndex = pagerState.currentPage,
+                selectedTabIndex = currentPage,
                 containerColor   = appColor,
                 contentColor     = Color.White,
                 edgePadding      = 12.dp,
                 indicator        = { tabPositions ->
-                    if (pagerState.currentPage < tabPositions.size) {
+                    // Smooth interpolated indicator — slides continuously with
+                    // the user's finger instead of jumping on page snap.
+                    if (tabPositions.isNotEmpty() && currentPage < tabPositions.size) {
+                        val fraction   = pagerState.currentPageOffsetFraction
+                        val targetPage = (currentPage + fraction.sign.toInt())
+                            .coerceIn(0, tabPositions.lastIndex)
+                        val from = tabPositions[currentPage]
+                        val to   = tabPositions[targetPage]
+                        val t    = fraction.absoluteValue   // 0 → 1 during swipe
+
                         Box(
                             Modifier
-                                .tabIndicatorOffset(tabPositions[pagerState.currentPage])
-                                .fillMaxWidth()
+                                .wrapContentSize(Alignment.BottomStart)
+                                .offset(x = lerp(from.left, to.left, t) + 10.dp)
+                                .width(
+                                    (lerp(from.width, to.width, t) - 20.dp)
+                                        .coerceAtLeast(0.dp)
+                                )
                                 .height(3.dp)
-                                .padding(horizontal = 10.dp)
                                 .clip(RoundedCornerShape(topStart = 3.dp, topEnd = 3.dp))
                                 .background(Color.White)
                         )
@@ -77,7 +96,7 @@ fun DocumentationScreen(
                 divider = {}
             ) {
                 selectedApp.sections.forEachIndexed { index, section ->
-                    val isSelected = pagerState.currentPage == index
+                    val isSelected = currentPage == index
                     Tab(
                         selected = isSelected,
                         onClick  = { scope.launch { pagerState.animateScrollToPage(index) } },
@@ -88,19 +107,20 @@ fun DocumentationScreen(
                             modifier          = Modifier.padding(horizontal = 6.dp)
                         ) {
                             Icon(
-                                painter        = painterResource(section.tabIcon),
+                                painter            = painterResource(section.tabIcon),
                                 contentDescription = null,
-                                modifier       = Modifier.size(15.dp),
-                                tint           = if (isSelected) Color.White
-                                                 else Color.White.copy(alpha = 0.6f)
+                                modifier           = Modifier.size(15.dp),
+                                tint               = if (isSelected) Color.White
+                                                     else Color.White.copy(alpha = 0.6f)
                             )
                             Spacer(Modifier.width(5.dp))
                             Text(
-                                text       = section.tabName,
-                                fontSize   = 12.5.sp,
-                                fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
-                                color      = if (isSelected) Color.White
-                                             else Color.White.copy(alpha = 0.6f),
+                                text          = section.tabName,
+                                fontSize      = 12.5.sp,
+                                fontWeight    = if (isSelected) FontWeight.Bold
+                                               else FontWeight.Normal,
+                                color         = if (isSelected) Color.White
+                                               else Color.White.copy(alpha = 0.6f),
                                 letterSpacing = 0.2.sp
                             )
                         }
@@ -109,14 +129,33 @@ fun DocumentationScreen(
             }
 
             // Page content
+            // beyondBoundsPageCount = 0 → only the visible page is composed.
+            // Default pre-composes 1 page either side, tripling the layout work.
             HorizontalPager(
-                state    = pagerState,
-                modifier = Modifier.fillMaxSize()
+                state               = pagerState,
+                beyondBoundsPageCount = 0,
+                modifier            = Modifier.fillMaxSize()
             ) { index ->
-                BookPageRenderer(
-                    section  = selectedApp.sections[index],
-                    appColor = appColor
-                )
+                // graphicsLayer runs entirely on the GPU render thread —
+                // a subtle fade during swipe with zero CPU cost.
+                val pageOffset = (
+                    (pagerState.currentPage - index) +
+                    pagerState.currentPageOffsetFraction
+                ).absoluteValue
+
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .graphicsLayer {
+                            // Fade pages slightly as they leave/enter (max 12% dim)
+                            alpha = 1f - (pageOffset * 0.12f).coerceIn(0f, 0.12f)
+                        }
+                ) {
+                    BookPageRenderer(
+                        section  = selectedApp.sections[index],
+                        appColor = appColor
+                    )
+                }
             }
         }
     }
