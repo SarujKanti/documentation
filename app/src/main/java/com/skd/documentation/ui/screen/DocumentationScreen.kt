@@ -133,7 +133,7 @@ fun DocumentationScreen(
             // Default pre-composes 1 page either side, tripling the layout work.
             HorizontalPager(
                 state               = pagerState,
-                beyondBoundsPageCount = 0,
+
                 modifier            = Modifier.fillMaxSize()
             ) { index ->
                 // graphicsLayer runs entirely on the GPU render thread —
