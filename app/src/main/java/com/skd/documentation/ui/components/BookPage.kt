@@ -445,6 +445,7 @@ private fun InfoBox(
 private fun getSpecificContent(title: String): Pair<String, List<String>> = when {
     title.contains("Clipboard", ignoreCase = true) ->
         "Clipboard" to listOf("✂ Cut", "📋 Copy", "Paste ▾", "🖌 Format Painter")
+
     title.contains("Font Group", ignoreCase = true) ->
         "Font" to listOf("Calibri ▾", "12 ▾", "B", "I", "U", "S̶", "x₂", "x²", "A▾", "🎨▾")
     title.contains("Paragraph Group", ignoreCase = true) ->
