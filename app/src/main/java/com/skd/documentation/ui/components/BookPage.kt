@@ -460,6 +460,7 @@ private fun getSpecificContent(title: String): Pair<String, List<String>> = when
 
     title.contains("Insert Tab Ribbon", ignoreCase = true) ->
         "Insert" to listOf("Cover Page", "Table ▾", "Pictures▾", "Shapes▾", "Icons", "SmartArt", "Chart", "Hyperlink")
+
     title.contains("Table Grid", ignoreCase = true) || title.contains("Insert Table", ignoreCase = true) ->
         "Tables" to listOf("• • • •", "• • • •", "• • • •", "Insert Table…", "Draw Table", "Quick Tables▾")
     title.contains("Wrap Text", ignoreCase = true) ->
