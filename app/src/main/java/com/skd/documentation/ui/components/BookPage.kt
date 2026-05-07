@@ -451,6 +451,7 @@ private fun getSpecificContent(title: String): Pair<String, List<String>> = when
 
     title.contains("Paragraph Group", ignoreCase = true) ->
         "Paragraph" to listOf("≡L", "≡C", "≡R", "≡J", "☰•", "1.", "↑¶", "↓¶", "↕▾", "¶")
+
     title.contains("Styles", ignoreCase = true) ->
         "Styles" to listOf("Normal", "No Spacing", "Heading 1", "Heading 2", "Title", "Subtitle", "▾ More")
     title.contains("Find", ignoreCase = true) || title.contains("Replace", ignoreCase = true) ->
