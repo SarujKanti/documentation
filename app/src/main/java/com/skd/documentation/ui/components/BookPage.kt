@@ -469,6 +469,7 @@ private fun getSpecificContent(title: String): Pair<String, List<String>> = when
 
     title.contains("SmartArt", ignoreCase = true) ->
         "Illustrations" to listOf("List", "Process", "Cycle", "Hierarchy", "Relationship", "Matrix", "Pyramid")
+
     title.contains("Design Tab Ribbon", ignoreCase = true) ->
         "Document Formatting" to listOf("Themes▾", "Colors▾", "Fonts▾", "Spacing▾", "Effects▾", "Set as Default")
     title.contains("Theme", ignoreCase = true) ->
