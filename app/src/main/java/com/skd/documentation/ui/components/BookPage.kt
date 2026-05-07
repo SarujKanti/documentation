@@ -472,6 +472,7 @@ private fun getSpecificContent(title: String): Pair<String, List<String>> = when
 
     title.contains("Design Tab Ribbon", ignoreCase = true) ->
         "Document Formatting" to listOf("Themes▾", "Colors▾", "Fonts▾", "Spacing▾", "Effects▾", "Set as Default")
+
     title.contains("Theme", ignoreCase = true) ->
         "Themes" to listOf("Office", "Facet", "Integral", "Ion", "Retrospect", "Slice", "Wisp", "Customize…")
     title.contains("Watermark", ignoreCase = true) ->
