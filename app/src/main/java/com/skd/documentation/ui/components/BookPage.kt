@@ -448,6 +448,7 @@ private fun getSpecificContent(title: String): Pair<String, List<String>> = when
 
     title.contains("Font Group", ignoreCase = true) ->
         "Font" to listOf("Calibri ▾", "12 ▾", "B", "I", "U", "S̶", "x₂", "x²", "A▾", "🎨▾")
+
     title.contains("Paragraph Group", ignoreCase = true) ->
         "Paragraph" to listOf("≡L", "≡C", "≡R", "≡J", "☰•", "1.", "↑¶", "↓¶", "↕▾", "¶")
     title.contains("Styles", ignoreCase = true) ->
