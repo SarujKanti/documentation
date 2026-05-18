@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity() {
                 darkScrim = Color.Transparent.toArgb()
             )
         )
+        
         setContent {
             DocumentationTheme {
                 DocumentationScreen()
