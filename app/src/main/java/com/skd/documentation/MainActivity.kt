@@ -23,7 +23,6 @@ class MainActivity : ComponentActivity() {
                 scrim = Color.Transparent.toArgb(),
                 darkScrim = Color.Transparent.toArgb()
             ),
-            
             navigationBarStyle = SystemBarStyle.light(
                 scrim = Color.Transparent.toArgb(),
                 darkScrim = Color.Transparent.toArgb()
