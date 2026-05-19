@@ -11,7 +11,6 @@ import com.skd.documentation.ui.screen.DocumentationScreen
 import com.skd.documentation.ui.theme.DocumentationTheme
 
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // ── Edge-to-edge: transparent status bar + navigation bar ────────────
