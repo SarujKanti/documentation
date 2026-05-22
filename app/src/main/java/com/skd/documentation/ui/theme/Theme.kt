@@ -47,7 +47,6 @@ fun DocumentationTheme(
         SideEffect {
             val window = (view.context as Activity).window
             val controller = WindowCompat.getInsetsController(window, view)
-
             // true → dark (visible) icons on our white top bar
             controller.isAppearanceLightStatusBars     = true
             // true → dark icons above the white/light navigation bar
