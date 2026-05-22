@@ -53,7 +53,7 @@ fun DocumentationTheme(
             controller.isAppearanceLightNavigationBars = true
         }
     }
-    
+
     MaterialTheme(
         colorScheme = colorScheme,
         typography  = Typography,
