@@ -46,7 +46,6 @@ fun DocumentationScreen(
             .background(Color(0xFFF6F7F9))
             .navigationBarsPadding()        // keeps content above gesture nav bar
     ) {
-
         // ── Slim top bar with ☰ hamburger ─────────────────────────────────────
         AppTopBar(
             selectedApp  = selectedApp,
