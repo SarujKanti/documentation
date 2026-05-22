@@ -13,7 +13,6 @@ class DocumentationViewModel : ViewModel() {
     private val _apps = MutableStateFlow(repository.getAllApps())
     val apps: StateFlow<List<OfficeApp>> = _apps
 
-
     private val _selectedAppIndex = MutableStateFlow(0)
     val selectedAppIndex: StateFlow<Int> = _selectedAppIndex
 
