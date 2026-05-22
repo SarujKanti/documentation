@@ -51,7 +51,6 @@ fun DocumentationScreen(
             selectedApp  = selectedApp,
             onMenuClick  = { showAppSheet = true }
         )
-
         
         // ── Tab row + pager — keyed so pager resets on app switch ────────────
         key(selectedAppIndex) {
