@@ -16,6 +16,7 @@ class DocumentationViewModel : ViewModel() {
     private val _selectedAppIndex = MutableStateFlow(0)
     val selectedAppIndex: StateFlow<Int> = _selectedAppIndex
 
+
     fun selectApp(index: Int) {
         _selectedAppIndex.value = index
     }
