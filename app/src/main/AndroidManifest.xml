@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Documentation"
         tools:targetApi="31">
-        
+
         <activity
             android:name=".ui.screen.SplashActivity"
             android:theme="@style/Theme.Documentation.Splash"
@@ -23,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name=".MainActivity"
             android:exported="false" />
