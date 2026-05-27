@@ -77,7 +77,6 @@ fun DocumentationScreen(
                         val from = tabPositions[currentPage]
                         val to   = tabPositions[targetPage]
                         val t    = fraction.absoluteValue   // 0 → 1 during swipe
-
                         Box(
                             Modifier
                                 .wrapContentSize(Alignment.BottomStart)
