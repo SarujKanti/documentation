@@ -140,7 +140,6 @@ fun DocumentationScreen(
                     (pagerState.currentPage - index) +
                     pagerState.currentPageOffsetFraction
                 ).absoluteValue
-
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
