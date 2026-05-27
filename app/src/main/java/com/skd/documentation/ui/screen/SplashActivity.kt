@@ -11,6 +11,7 @@ class SplashActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         // Install splash screen BEFORE super.onCreate
         installSplashScreen()
+
         super.onCreate(savedInstanceState)
 
         // Navigate immediately to MainActivity
