@@ -55,7 +55,6 @@ fun DocumentationScreen(
         key(selectedAppIndex) {
             val pagerState = rememberPagerState { selectedApp.sections.size }
             val appColor   = Color(selectedApp.primaryColor)
-
             // derivedStateOf: tab labels only recompose when the page number
             // changes, NOT on every frame during a swipe gesture.
             val currentPage by remember { derivedStateOf { pagerState.currentPage } }
