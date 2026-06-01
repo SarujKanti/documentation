@@ -59,7 +59,7 @@ fun DocumentationScreen(
             // changes, NOT on every frame during a swipe gesture.
             val currentPage by remember { derivedStateOf { pagerState.currentPage } }
 
-            
+
             // Scrollable tab row
             ScrollableTabRow(
                 selectedTabIndex = currentPage,
