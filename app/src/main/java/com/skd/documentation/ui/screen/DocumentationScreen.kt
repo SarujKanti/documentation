@@ -258,7 +258,6 @@ private fun AppTopBar(
                     letterSpacing = 0.2.sp
                 )
             }
-
             Spacer(Modifier.weight(1f))
 
             // Badge
