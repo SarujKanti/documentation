@@ -213,7 +213,6 @@ private fun AppTopBar(
                     .size(40.dp)
                     .clip(CircleShape)
                     .clickable(
-                        
                         interactionSource = remember { MutableInteractionSource() },
                         indication        = null
                     ) { onMenuClick() }
