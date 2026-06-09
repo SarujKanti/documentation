@@ -190,6 +190,7 @@ fun DocumentationScreen(
 @Composable
 private fun AppTopBar(
     selectedApp: OfficeApp,
+
     onMenuClick: () -> Unit
 ) {
     val appColor = Color(selectedApp.primaryColor)
