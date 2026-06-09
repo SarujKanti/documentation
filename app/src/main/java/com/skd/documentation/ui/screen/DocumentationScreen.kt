@@ -310,6 +310,7 @@ private fun AppSelectorSheet(
                 color    = Color(0xFF9CA3AF)
             )
         }
+
         
         HorizontalDivider(color = Color(0xFFF3F4F6))
         Spacer(Modifier.height(6.dp))
