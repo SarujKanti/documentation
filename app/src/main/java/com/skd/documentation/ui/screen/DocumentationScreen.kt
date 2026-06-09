@@ -221,6 +221,7 @@ private fun AppTopBar(
                     modifier             = Modifier.size(width = 18.dp, height = 13.dp),
                     verticalArrangement  = Arrangement.SpaceBetween
                 ) {
+                    
                     repeat(3) {
                         Box(
                             modifier = Modifier
