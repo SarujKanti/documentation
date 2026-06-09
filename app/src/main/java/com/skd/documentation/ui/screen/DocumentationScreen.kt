@@ -242,7 +242,6 @@ private fun AppTopBar(
                 modifier          = Modifier.size(22.dp)
             )
             Spacer(Modifier.width(10.dp))
-            
             // Title stack
             Column {
                 Text(
