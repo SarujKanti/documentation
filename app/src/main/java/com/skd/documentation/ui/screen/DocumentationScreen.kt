@@ -310,7 +310,7 @@ private fun AppSelectorSheet(
                 color    = Color(0xFF9CA3AF)
             )
         }
-        
+
         HorizontalDivider(color = Color(0xFFF3F4F6))
         Spacer(Modifier.height(6.dp))
 
@@ -341,6 +341,7 @@ private fun AppSelectorSheet(
                         .background(
                             if (isSelected) appColor else appColor.copy(alpha = 0.10f)
                         )
+                    
                 ) {
                     Icon(
                         painter           = painterResource(app.appIcon),
