@@ -341,7 +341,6 @@ private fun AppSelectorSheet(
                         .background(
                             if (isSelected) appColor else appColor.copy(alpha = 0.10f)
                         )
-                    
                 ) {
                     Icon(
                         painter           = painterResource(app.appIcon),
