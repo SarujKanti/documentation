@@ -343,6 +343,7 @@ private fun AppSelectorSheet(
                         )
                 ) {
                     Icon(
+
                         
                         painter           = painterResource(app.appIcon),
                         contentDescription = null,
