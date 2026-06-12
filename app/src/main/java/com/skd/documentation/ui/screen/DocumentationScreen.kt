@@ -342,7 +342,7 @@ private fun AppSelectorSheet(
                             if (isSelected) appColor else appColor.copy(alpha = 0.10f)
                         )
                 ) {
-                    
+
                     Icon(
                         painter           = painterResource(app.appIcon),
                         contentDescription = null,
@@ -352,7 +352,6 @@ private fun AppSelectorSheet(
                 }
 
                 Spacer(Modifier.width(16.dp))
-
 
                 // Labels
                 Column(modifier = Modifier.weight(1f)) {
