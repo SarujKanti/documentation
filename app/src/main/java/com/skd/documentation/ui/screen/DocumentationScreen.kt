@@ -343,7 +343,6 @@ private fun AppSelectorSheet(
                         )
                 ) {
                     Icon(
-                        
                         painter           = painterResource(app.appIcon),
                         contentDescription = null,
                         tint              = if (isSelected) Color.White else appColor,
