@@ -14,6 +14,7 @@ class SplashActivity : ComponentActivity() {
 
         super.onCreate(savedInstanceState)
 
+
         // Navigate immediately to MainActivity
         startActivity(Intent(this, MainActivity::class.java))
         finish()
