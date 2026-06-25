@@ -377,7 +377,6 @@ private fun AppSelectorSheet(
                             .background(appColor)
                     ) {
 
-
                         Text(
                             text       = "✓",
                             fontSize   = 13.sp,
