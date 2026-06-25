@@ -350,7 +350,7 @@ private fun AppSelectorSheet(
                         modifier          = Modifier.size(24.dp)
                     )
                 }
-                
+
                 Spacer(Modifier.width(16.dp))
                 // Labels
                 Column(modifier = Modifier.weight(1f)) {
@@ -376,6 +376,7 @@ private fun AppSelectorSheet(
                             .clip(CircleShape)
                             .background(appColor)
                     ) {
+                        
                         Text(
                             text       = "✓",
                             fontSize   = 13.sp,
