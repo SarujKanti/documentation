@@ -382,6 +382,7 @@ private fun AppSelectorSheet(
                             color      = Color.White,
                             fontWeight = FontWeight.Bold
                         )
+                        
                     }
                 } else {
                     Box(
