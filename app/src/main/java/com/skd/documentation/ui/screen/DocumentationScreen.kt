@@ -376,7 +376,6 @@ private fun AppSelectorSheet(
                             .clip(CircleShape)
                             .background(appColor)
                     ) {
-
                         Text(
                             text       = "✓",
                             fontSize   = 13.sp,
