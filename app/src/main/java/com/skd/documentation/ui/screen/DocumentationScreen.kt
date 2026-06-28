@@ -334,6 +334,7 @@ private fun AppSelectorSheet(
             ) {
                 // Icon circle
                 Box(
+                    
                     contentAlignment = Alignment.Center,
                     modifier         = Modifier
                         .size(46.dp)
@@ -350,7 +351,7 @@ private fun AppSelectorSheet(
                         modifier          = Modifier.size(24.dp)
                     )
                 }
-                
+
                 Spacer(Modifier.width(16.dp))
                 // Labels
                 Column(modifier = Modifier.weight(1f)) {
