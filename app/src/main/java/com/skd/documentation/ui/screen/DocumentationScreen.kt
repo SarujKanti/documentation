@@ -351,7 +351,6 @@ private fun AppSelectorSheet(
                     )
                 }
 
-                
                 Spacer(Modifier.width(16.dp))
                 // Labels
 
