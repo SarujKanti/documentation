@@ -334,7 +334,6 @@ private fun AppSelectorSheet(
             ) {
                 // Icon circle
                 Box(
-                    
                     contentAlignment = Alignment.Center,
                     modifier         = Modifier
                         .size(46.dp)
