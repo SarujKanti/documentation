@@ -358,7 +358,6 @@ private fun AppSelectorSheet(
                         fontSize   = 15.sp,
                         color      = if (isSelected) appColor else Color(0xFF111827)
                     )
-
                     
                     Text(
                         text     = "${app.sections.size} topics available",
