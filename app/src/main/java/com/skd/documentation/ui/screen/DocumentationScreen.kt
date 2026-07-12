@@ -381,6 +381,7 @@ private fun AppSelectorSheet(
                             fontWeight = FontWeight.Bold
                         )
                     }
+                    
                 } else {
                     Box(
                         modifier = Modifier
