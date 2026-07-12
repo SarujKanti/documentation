@@ -366,6 +366,7 @@ private fun AppSelectorSheet(
                 }
                 // Selected checkmark
                 if (isSelected) {
+                    
                     Box(
                         contentAlignment = Alignment.Center,
                         modifier = Modifier
