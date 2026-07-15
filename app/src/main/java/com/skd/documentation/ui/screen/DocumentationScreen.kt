@@ -388,7 +388,6 @@ private fun AppSelectorSheet(
                             .background(Color(0xFFF3F4F6))
                     )
                 }
-                
             }
         }
     }
