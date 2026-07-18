@@ -391,6 +391,5 @@ private fun AppSelectorSheet(
             }
         }
     }
-
 }
 
