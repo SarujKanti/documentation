@@ -382,6 +382,7 @@ private fun AppSelectorSheet(
                         )
                     }
                 } else {
+                    
                     Box(
                         modifier = Modifier
                             .size(26.dp)
