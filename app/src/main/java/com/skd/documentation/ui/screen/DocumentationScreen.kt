@@ -356,7 +356,7 @@ private fun AppSelectorSheet(
                     Text(
                         text       = app.appName.removePrefix("MS "),
                         fontWeight = if (isSelected) FontWeight.ExtraBold else FontWeight.SemiBold,
-                        fontSize   = 15.sp,
+                        fontSize   = 16.sp,
                         color      = if (isSelected) appColor else Color(0xFF111827)
                     )
                     Text(
