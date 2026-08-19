@@ -312,6 +312,7 @@ private fun AppSelectorSheet(
         }
 
         HorizontalDivider(color = Color(0xFFF3F4F6))
+        
         Spacer(Modifier.height(6.dp))
 
         // App rows
@@ -337,7 +338,7 @@ private fun AppSelectorSheet(
                     contentAlignment = Alignment.Center,
                     modifier         = Modifier
                         .size(46.dp)
-                        
+
                         .clip(CircleShape)
                         .background(
                             if (isSelected) appColor else appColor.copy(alpha = 0.10f)
