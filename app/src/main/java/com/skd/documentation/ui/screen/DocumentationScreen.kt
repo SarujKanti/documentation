@@ -337,7 +337,9 @@ private fun AppSelectorSheet(
                     contentAlignment = Alignment.Center,
                     modifier         = Modifier
                         .size(46.dp)
-                        
+
+
+
                         .clip(CircleShape)
                         .background(
                             if (isSelected) appColor else appColor.copy(alpha = 0.10f)
