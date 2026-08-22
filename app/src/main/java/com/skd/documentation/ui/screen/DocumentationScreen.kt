@@ -337,6 +337,7 @@ private fun AppSelectorSheet(
                 Box(
                     contentAlignment = Alignment.Center,
                     modifier         = Modifier
+
                         .size(46.dp)
                         .clip(CircleShape)
                         .background(
