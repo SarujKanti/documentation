@@ -355,7 +355,6 @@ private fun AppSelectorSheet(
 
                 Spacer(Modifier.width(16.dp))
                 // Labels
-                
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
                         text       = app.appName.removePrefix("MS "),
