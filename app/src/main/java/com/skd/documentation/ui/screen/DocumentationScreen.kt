@@ -333,6 +333,8 @@ private fun AppSelectorSheet(
                     .padding(horizontal = 22.dp, vertical = 13.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
+
+                
                 // Icon circle
                 Box(
                     contentAlignment = Alignment.Center,
