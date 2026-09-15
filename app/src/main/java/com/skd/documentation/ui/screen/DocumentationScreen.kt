@@ -334,7 +334,7 @@ private fun AppSelectorSheet(
                 verticalAlignment = Alignment.CenterVertically
             ) {
 
-                
+
                 // Icon circle
                 Box(
                     contentAlignment = Alignment.Center,
@@ -368,6 +368,8 @@ private fun AppSelectorSheet(
                         color    = Color(0xFF9CA3AF)
                     )
                 }
+
+                
                 // Selected checkmark
                 if (isSelected) {
                     Box(
