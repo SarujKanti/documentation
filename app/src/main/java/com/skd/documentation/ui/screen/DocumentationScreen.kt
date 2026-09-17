@@ -369,7 +369,6 @@ private fun AppSelectorSheet(
                     )
                 }
 
-                
                 // Selected checkmark
                 if (isSelected) {
                     Box(
