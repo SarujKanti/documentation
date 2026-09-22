@@ -333,8 +333,7 @@ private fun AppSelectorSheet(
                     .padding(horizontal = 22.dp, vertical = 13.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-
-
+                
                 // Icon circle
                 Box(
                     contentAlignment = Alignment.Center,
@@ -346,7 +345,7 @@ private fun AppSelectorSheet(
                         )
                 ) {
                     Icon(
-                        
+
                         painter           = painterResource(app.appIcon),
                         contentDescription = null,
                         tint              = if (isSelected) Color.White else appColor,
