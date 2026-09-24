@@ -353,6 +353,8 @@ private fun AppSelectorSheet(
                     )
                 }
 
+                
+
                 Spacer(Modifier.width(16.dp))
                 // Labels
                 Column(modifier = Modifier.weight(1f)) {
@@ -369,7 +371,7 @@ private fun AppSelectorSheet(
                     )
                 }
 
-                
+
 
                 // Selected checkmark
                 if (isSelected) {
