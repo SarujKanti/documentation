@@ -352,7 +352,7 @@ private fun AppSelectorSheet(
                         modifier          = Modifier.size(24.dp)
                     )
                 }
-                
+
 
                 Spacer(Modifier.width(16.dp))
                 // Labels
@@ -369,8 +369,6 @@ private fun AppSelectorSheet(
                         color    = Color(0xFF9CA3AF)
                     )
                 }
-
-
 
                 // Selected checkmark
                 if (isSelected) {
