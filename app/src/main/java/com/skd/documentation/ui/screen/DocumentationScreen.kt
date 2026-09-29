@@ -373,7 +373,7 @@ private fun AppSelectorSheet(
                 // Selected checkmark
                 if (isSelected) {
                     Box(
-                        
+
                         contentAlignment = Alignment.Center,
                         modifier = Modifier
                             .size(26.dp)
@@ -390,6 +390,7 @@ private fun AppSelectorSheet(
                 } else {
                     Box(
                         modifier = Modifier
+                            
                             .size(26.dp)
                             .clip(CircleShape)
                             .background(Color(0xFFF3F4F6))
