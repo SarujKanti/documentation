@@ -368,7 +368,8 @@ private fun AppSelectorSheet(
                         fontSize = 11.sp,
                         color    = Color(0xFF9CA3AF)
                     )
-                }  
+                }
+                
 
                 // Selected checkmark
                 if (isSelected) {
