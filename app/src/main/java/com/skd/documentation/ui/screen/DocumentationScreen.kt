@@ -369,6 +369,7 @@ private fun AppSelectorSheet(
                         color    = Color(0xFF9CA3AF)
                     )
                 }
+
                 
 
                 // Selected checkmark
